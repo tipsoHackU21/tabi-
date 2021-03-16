@@ -15,6 +15,7 @@
 		6C41027B25FFAB9A0023AA12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */; };
 		6C41028625FFAB9B0023AA12 /* tabi_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41028525FFAB9B0023AA12 /* tabi_Tests.swift */; };
 		6C41029125FFAB9B0023AA12 /* tabi_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41029025FFAB9B0023AA12 /* tabi_UITests.swift */; };
+		6C4102A225FFAF860023AA12 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102A125FFAF860023AA12 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6C41028C25FFAB9B0023AA12 /* tabi!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tabi!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C41029025FFAB9B0023AA12 /* tabi_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabi_UITests.swift; sourceTree = "<group>"; };
 		6C41029225FFAB9B0023AA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C4102A125FFAF860023AA12 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6C41027025FFAB970023AA12 /* SceneDelegate.swift */,
 				6C41027225FFAB970023AA12 /* ViewController.swift */,
 				6C41027425FFAB970023AA12 /* Main.storyboard */,
+				6C4102A125FFAF860023AA12 /* Storyboard.storyboard */,
 				6C41027725FFAB9A0023AA12 /* Assets.xcassets */,
 				6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */,
 				6C41027C25FFAB9A0023AA12 /* Info.plist */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C41027B25FFAB9A0023AA12 /* LaunchScreen.storyboard in Resources */,
+				6C4102A225FFAF860023AA12 /* Storyboard.storyboard in Resources */,
 				6C41027825FFAB9A0023AA12 /* Assets.xcassets in Resources */,
 				6C41027625FFAB970023AA12 /* Main.storyboard in Resources */,
 			);
