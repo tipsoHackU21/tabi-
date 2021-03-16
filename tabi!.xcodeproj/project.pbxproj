@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -123,7 +123,6 @@
 				C5E6B2F9A5DCE518926ABE59 /* Pods-tabi!Tests.debug.xcconfig */,
 				F99F4211E9C7775B2DDACE3C /* Pods-tabi!Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
