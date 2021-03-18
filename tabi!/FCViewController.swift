@@ -33,8 +33,8 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
     UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
   // Instance variables
-  @IBOutlet weak var textField: UITextField!
-  @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
   var ref: DatabaseReference!
   var messages: [DataSnapshot] = []
   var msglength: NSNumber = 10
@@ -44,9 +44,10 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
 //  var remoteConfig: RemoteConfig!
 
 //  @IBOutlet weak var banner: GADBannerView!
-  @IBOutlet weak var clientTable: UITableView!
+    @IBOutlet weak var clientTable: UITableView!
 
-  override func viewDidLoad() {
+    
+    override func viewDidLoad() {
     super.viewDidLoad()
 
     self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
@@ -84,20 +85,22 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
   func fetchConfig() {
   }
 
-  @IBAction func didPressFreshConfig(_ sender: AnyObject) {
-    fetchConfig()
-  }
+    @IBAction func didPressFreshConfig(_ sender: Any) {
+        fetchConfig()
+    }
 
-  @IBAction func didSendMessage(_ sender: UIButton) {
+    //不明
+    @IBAction func didSendMessage(_ sender: UIButton) {
     _ = textFieldShouldReturn(textField)
   }
 
-  @IBAction func didPressCrash(_ sender: AnyObject) {
-  }
+    @IBAction func didPressCrash(_ sender: AnyObject) {
+    }
+    
 
-  @IBAction func inviteTapped(_ sender: AnyObject) {
-  }
-
+    @IBAction func inviteTapped(_ sender: AnyObject) {
+    }
+  
   func loadAd() {
   }
 
@@ -281,7 +284,8 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
         } catch let signOutError as NSError {
           print ("Error signing out: \(signOutError.localizedDescription)")
         }
-      }
+    }
+
 
   func showAlert(withTitle title: String, message: String) {
     DispatchQueue.main.async {
@@ -304,3 +308,4 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
     return input.rawValue
 }
+
