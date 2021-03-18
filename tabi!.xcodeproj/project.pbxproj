@@ -10,6 +10,8 @@
 		15784BE95619043940DD185A /* Pods_tabi_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B861A56BA74730ECC48BC6 /* Pods_tabi_Tests.framework */; };
 		5B26DC8FCF5B4BA45FEF378A /* Pods_tabi__tabi_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2102E65DFEC0252B9C40F02 /* Pods_tabi__tabi_UITests.framework */; };
 		6C3D2F622602E424006246C2 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C3D2F612602E424006246C2 /* login.storyboard */; };
+		6C3D2F782602F38A006246C2 /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D2F772602F38A006246C2 /* Contents.swift */; };
+		6C3D2F7D2602F526006246C2 /* MeasurementHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D2F7C2602F526006246C2 /* MeasurementHelper.swift */; };
 		6C41026F25FFAB970023AA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41026E25FFAB970023AA12 /* AppDelegate.swift */; };
 		6C41027125FFAB970023AA12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41027025FFAB970023AA12 /* SceneDelegate.swift */; };
 		6C41027325FFAB970023AA12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41027225FFAB970023AA12 /* ViewController.swift */; };
@@ -29,7 +31,7 @@
 		6C85504B260244CC006B82D9 /* mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C85504A260244CC006B82D9 /* mypage.storyboard */; };
 		6C8550502602450A006B82D9 /* recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85504F2602450A006B82D9 /* recruit.swift */; };
 		6C8550552602451E006B82D9 /* recruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8550542602451E006B82D9 /* recruit.storyboard */; };
-		6C85508026024981006B82D9 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85507F26024981006B82D9 /* login.swift */; };
+		6C85508026024981006B82D9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85507F26024981006B82D9 /* SignInViewController.swift */; };
 		6FA56E5844975A189155F4A6 /* Pods_tabi_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F314CB627FC7833BD7130 /* Pods_tabi_.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		2317E88C90D79EF6E52F482E /* Pods-tabi!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!.release.xcconfig"; path = "Target Support Files/Pods-tabi!/Pods-tabi!.release.xcconfig"; sourceTree = "<group>"; };
 		48EDBD2CBA8857E0E8EA7F72 /* Pods-tabi!-tabi!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!-tabi!UITests.debug.xcconfig"; path = "Target Support Files/Pods-tabi!-tabi!UITests/Pods-tabi!-tabi!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C3D2F612602E424006246C2 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		6C3D2F772602F38A006246C2 /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		6C3D2F7C2602F526006246C2 /* MeasurementHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementHelper.swift; sourceTree = "<group>"; };
 		6C41026B25FFAB970023AA12 /* tabi!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tabi!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C41026E25FFAB970023AA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C41027025FFAB970023AA12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		6C85504A260244CC006B82D9 /* mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mypage.storyboard; sourceTree = "<group>"; };
 		6C85504F2602450A006B82D9 /* recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruit.swift; sourceTree = "<group>"; };
 		6C8550542602451E006B82D9 /* recruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = recruit.storyboard; sourceTree = "<group>"; };
-		6C85507F26024981006B82D9 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		6C85507F26024981006B82D9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8DF5ABB1656855F86C01A823 /* Pods-tabi!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!.debug.xcconfig"; path = "Target Support Files/Pods-tabi!/Pods-tabi!.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E2A8BCA64A06DC3A231DDE /* Pods-tabi!-tabi!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!-tabi!UITests.release.xcconfig"; path = "Target Support Files/Pods-tabi!-tabi!UITests/Pods-tabi!-tabi!UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A7B861A56BA74730ECC48BC6 /* Pods_tabi_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabi_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +179,9 @@
 				6C8550542602451E006B82D9 /* recruit.storyboard */,
 				6C85504A260244CC006B82D9 /* mypage.storyboard */,
 				6C4102D1260078970023AA12 /* chat.storyboard */,
-				6C85507F26024981006B82D9 /* login.swift */,
+				6C85507F26024981006B82D9 /* SignInViewController.swift */,
+				6C3D2F7C2602F526006246C2 /* MeasurementHelper.swift */,
+				6C3D2F772602F38A006246C2 /* Contents.swift */,
 				6C855045260244AC006B82D9 /* mypage.swift */,
 				6C85504F2602450A006B82D9 /* recruit.swift */,
 				6C85504026024443006B82D9 /* home.swift */,
@@ -489,11 +495,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C85504126024443006B82D9 /* home.swift in Sources */,
+				6C3D2F782602F38A006246C2 /* Contents.swift in Sources */,
 				6C4102DC260079120023AA12 /* chat.swift in Sources */,
 				6C41027325FFAB970023AA12 /* ViewController.swift in Sources */,
 				6C4102D7260078F00023AA12 /* account.swift in Sources */,
-				6C85508026024981006B82D9 /* login.swift in Sources */,
+				6C85508026024981006B82D9 /* SignInViewController.swift in Sources */,
 				6C41026F25FFAB970023AA12 /* AppDelegate.swift in Sources */,
+				6C3D2F7D2602F526006246C2 /* MeasurementHelper.swift in Sources */,
 				6C41027125FFAB970023AA12 /* SceneDelegate.swift in Sources */,
 				6C8550502602450A006B82D9 /* recruit.swift in Sources */,
 				6C855046260244AC006B82D9 /* mypage.swift in Sources */,

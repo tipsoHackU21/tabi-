@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+//        var storyboardName: String
+//        画面遷移を制御したかった....
+//        if UserDefaults.standard.shouldDisplayTutorial() {
+//            // 初回起動
+//            storyboardName = "Tutorial"
+//        } else {
+//            // ２回目以降
+//            storyboardName = "Main"
+//        }
+//        let storybord: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window!.rootViewController = storybord.instantiateInitialViewController()
+//        window!.makeKeyAndVisible()
         return true
     }
 
