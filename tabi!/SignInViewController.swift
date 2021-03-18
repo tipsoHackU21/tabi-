@@ -24,27 +24,34 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
   var handle: AuthStateDidChangeListenerHandle?
     
-//    //追加
-////    GIDSignIn.sharedInstance()?.uiDelegate = self
-//    
-//    
-//    override func viewDidLoad() {
-//      super.viewDidLoad()
-////      GIDSignIn.sharedInstance().uiDelegate = self
-//      GIDSignIn.sharedInstance()?.presentingViewController = self
-////      GIDSignIn.sharedInstance().signInSilently()
-//        GIDSignIn.sharedInstance().signIn()
-//      handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
-//        if user != nil {
-//          MeasurementHelper.sendLoginEvent()
-//          self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
-//        }
-//      }
-//    }
-//
-//  deinit {
-//    if let handle = handle {
-//      Auth.auth().removeStateDidChangeListener(handle)
-//    }
-//  }
+    //追加
+//    GIDSignIn.sharedInstance()?.uiDelegate = self
+    
+    
+    override func viewDidLoad() {
+      super.viewDidLoad()
+//      GIDSignIn.sharedInstance().uiDelegate = self
+      GIDSignIn.sharedInstance()?.presentingViewController = self
+//      GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signIn()
+        var userdesu = Auth.auth().currentUser;
+        var userdesu2 = Auth.auth().currentUser?.displayName;
+        print("情報1:")
+        print(userdesu)
+        print("情報2")
+        print(userdesu2)
+      handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
+        if user != nil {
+          MeasurementHelper.sendLoginEvent()
+          print("セグエするぞ〜")
+          self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
+        }
+      }
+    }
+
+  deinit {
+    if let handle = handle {
+      Auth.auth().removeStateDidChangeListener(handle)
+    }
+  }
 }
