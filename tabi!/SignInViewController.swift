@@ -21,9 +21,9 @@ import GoogleSignIn
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
-//    @IBOutlet weak var signInButton: GIDSignInButton!
-//  var handle: AuthStateDidChangeListenerHandle?
-//    
+    @IBOutlet weak var signInButton: GIDSignInButton!
+  var handle: AuthStateDidChangeListenerHandle?
+    
 //    //追加
 ////    GIDSignIn.sharedInstance()?.uiDelegate = self
 //    
