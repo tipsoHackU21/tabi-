@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15784BE95619043940DD185A /* Pods_tabi_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B861A56BA74730ECC48BC6 /* Pods_tabi_Tests.framework */; };
 		5B26DC8FCF5B4BA45FEF378A /* Pods_tabi__tabi_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2102E65DFEC0252B9C40F02 /* Pods_tabi__tabi_UITests.framework */; };
+		6C3D2F622602E424006246C2 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C3D2F612602E424006246C2 /* login.storyboard */; };
 		6C41026F25FFAB970023AA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41026E25FFAB970023AA12 /* AppDelegate.swift */; };
 		6C41027125FFAB970023AA12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41027025FFAB970023AA12 /* SceneDelegate.swift */; };
 		6C41027325FFAB970023AA12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41027225FFAB970023AA12 /* ViewController.swift */; };
@@ -17,7 +18,6 @@
 		6C41027B25FFAB9A0023AA12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */; };
 		6C41028625FFAB9B0023AA12 /* tabi_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41028525FFAB9B0023AA12 /* tabi_Tests.swift */; };
 		6C41029125FFAB9B0023AA12 /* tabi_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C41029025FFAB9B0023AA12 /* tabi_UITests.swift */; };
-		6C4102A225FFAF860023AA12 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102A125FFAF860023AA12 /* Storyboard.storyboard */; };
 		6C4102CD2600787C0023AA12 /* account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102CC2600787C0023AA12 /* account.storyboard */; };
 		6C4102D2260078970023AA12 /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102D1260078970023AA12 /* chat.storyboard */; };
 		6C4102D7260078F00023AA12 /* account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4102D6260078F00023AA12 /* account.swift */; };
@@ -53,6 +53,7 @@
 /* Begin PBXFileReference section */
 		2317E88C90D79EF6E52F482E /* Pods-tabi!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!.release.xcconfig"; path = "Target Support Files/Pods-tabi!/Pods-tabi!.release.xcconfig"; sourceTree = "<group>"; };
 		48EDBD2CBA8857E0E8EA7F72 /* Pods-tabi!-tabi!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!-tabi!UITests.debug.xcconfig"; path = "Target Support Files/Pods-tabi!-tabi!UITests/Pods-tabi!-tabi!UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C3D2F612602E424006246C2 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		6C41026B25FFAB970023AA12 /* tabi!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tabi!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C41026E25FFAB970023AA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C41027025FFAB970023AA12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		6C41028C25FFAB9B0023AA12 /* tabi!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tabi!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C41029025FFAB9B0023AA12 /* tabi_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabi_UITests.swift; sourceTree = "<group>"; };
 		6C41029225FFAB9B0023AA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C4102A125FFAF860023AA12 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		6C4102CC2600787C0023AA12 /* account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = account.storyboard; sourceTree = "<group>"; };
 		6C4102D1260078970023AA12 /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		6C4102D6260078F00023AA12 /* account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = account.swift; sourceTree = "<group>"; };
@@ -169,18 +169,18 @@
 				6C41027025FFAB970023AA12 /* SceneDelegate.swift */,
 				6C41027225FFAB970023AA12 /* ViewController.swift */,
 				6C41027425FFAB970023AA12 /* Main.storyboard */,
-				6C85507F26024981006B82D9 /* login.swift */,
+				6C3D2F612602E424006246C2 /* login.storyboard */,
 				6C4102CC2600787C0023AA12 /* account.storyboard */,
 				6C85503B2602441F006B82D9 /* home.storyboard */,
-				6C855045260244AC006B82D9 /* mypage.swift */,
-				6C85504F2602450A006B82D9 /* recruit.swift */,
 				6C8550542602451E006B82D9 /* recruit.storyboard */,
 				6C85504A260244CC006B82D9 /* mypage.storyboard */,
+				6C4102D1260078970023AA12 /* chat.storyboard */,
+				6C85507F26024981006B82D9 /* login.swift */,
+				6C855045260244AC006B82D9 /* mypage.swift */,
+				6C85504F2602450A006B82D9 /* recruit.swift */,
 				6C85504026024443006B82D9 /* home.swift */,
 				6C4102D6260078F00023AA12 /* account.swift */,
 				6C4102DB260079120023AA12 /* chat.swift */,
-				6C4102D1260078970023AA12 /* chat.storyboard */,
-				6C4102A125FFAF860023AA12 /* Storyboard.storyboard */,
 				6C41027725FFAB9A0023AA12 /* Assets.xcassets */,
 				6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */,
 				6C41027C25FFAB9A0023AA12 /* Info.plist */,
@@ -318,7 +318,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C41027B25FFAB9A0023AA12 /* LaunchScreen.storyboard in Resources */,
-				6C4102A225FFAF860023AA12 /* Storyboard.storyboard in Resources */,
 				6C4102CD2600787C0023AA12 /* account.storyboard in Resources */,
 				6C8550552602451E006B82D9 /* recruit.storyboard in Resources */,
 				6C41027825FFAB9A0023AA12 /* Assets.xcassets in Resources */,
@@ -326,6 +325,7 @@
 				6C4102D2260078970023AA12 /* chat.storyboard in Resources */,
 				6C41027625FFAB970023AA12 /* Main.storyboard in Resources */,
 				6C4102E126007E590023AA12 /* GoogleService-Info.plist in Resources */,
+				6C3D2F622602E424006246C2 /* login.storyboard in Resources */,
 				6C85503C2602441F006B82D9 /* home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
