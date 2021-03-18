@@ -38,7 +38,8 @@ target 'tabi!' do
   pod 'Firebase/Storage'
   pod 'Firebase/Crashlytics'
   pod 'GoogleSignIn'
-
+  pod 'Firebase/Auth'
+  
 #  pod 'GoogleSignIn', '~> 5.0'
 
   

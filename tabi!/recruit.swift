@@ -8,13 +8,16 @@
 import Foundation
 import UIKit
 
+import GoogleSignIn
+import FirebaseAuth
+
 class recruit: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var Username = Auth.auth().currentUser?.displayName
     }
-
+    
 
 }
 
