@@ -16,7 +16,7 @@ target 'tabi!' do
     # Pods for testing
   end
   
-  platform :ios, '9,0'
+  platform :ios, '14,4'
   
   source 'https://cdn.cocoapods.org/'
   
