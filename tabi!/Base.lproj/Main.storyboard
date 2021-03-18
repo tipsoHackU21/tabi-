@@ -38,29 +38,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZQ-ac-Cjy">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="XId-aw-EEB" customClass="GIDSignInButton">
                                 <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.56078431370000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="WOX-J8-Cj0"/>
-                                    <constraint firstAttribute="height" constant="100" id="kP1-ce-QLT"/>
+                                    <constraint firstAttribute="width" constant="100" id="1gx-Kf-itd"/>
+                                    <constraint firstAttribute="height" constant="100" id="KrY-Pi-Gw3"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ic_microsoft.png"/>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tfb-AU-0Za"/>
                         <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
-                            <constraint firstItem="SZQ-ac-Cjy" firstAttribute="centerY" secondItem="BYs-J8-lzG" secondAttribute="centerY" id="3qA-2G-rIx"/>
-                            <constraint firstItem="SZQ-ac-Cjy" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="iUA-NW-Phy"/>
+                            <constraint firstItem="XId-aw-EEB" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="Eou-lT-kgw"/>
+                            <constraint firstItem="XId-aw-EEB" firstAttribute="centerY" secondItem="BYs-J8-lzG" secondAttribute="centerY" id="Pui-CH-RDd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="signInButton" destination="iUA-NW-Phy" id="FH9-GX-oEo"/>
+                        <outlet property="signInButton" destination="XId-aw-EEB" id="EFZ-GS-GtX"/>
+                        <segue destination="bS5-NQ-32s" kind="show" identifier="SignInToFP" id="c9H-FU-buE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay1-fn-Ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1226.0869565217392" y="-289.28571428571428"/>
+            <point key="canvasLocation" x="-1199" y="-289"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ppY-W6-lwQ">
@@ -119,7 +120,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_microsoft.png" width="13.241379737854004" height="13.241379737854004"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

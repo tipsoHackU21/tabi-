@@ -24,7 +24,6 @@
 		6C4102D2260078970023AA12 /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102D1260078970023AA12 /* chat.storyboard */; };
 		6C4102D7260078F00023AA12 /* account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4102D6260078F00023AA12 /* account.swift */; };
 		6C4102DC260079120023AA12 /* chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4102DB260079120023AA12 /* chat.swift */; };
-		6C4102E126007E590023AA12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C4102E026007E590023AA12 /* GoogleService-Info.plist */; };
 		6C85503C2602441F006B82D9 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C85503B2602441F006B82D9 /* home.storyboard */; };
 		6C85504126024443006B82D9 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85504026024443006B82D9 /* home.swift */; };
 		6C855046260244AC006B82D9 /* mypage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C855045260244AC006B82D9 /* mypage.swift */; };
@@ -33,6 +32,7 @@
 		6C8550552602451E006B82D9 /* recruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8550542602451E006B82D9 /* recruit.storyboard */; };
 		6C85508026024981006B82D9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85507F26024981006B82D9 /* SignInViewController.swift */; };
 		6CDDAC2326031CB00011422D /* FCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDDAC2226031CB00011422D /* FCViewController.swift */; };
+		6CDDAC7F260347850011422D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CDDAC7E260347850011422D /* GoogleService-Info.plist */; };
 		6FA56E5844975A189155F4A6 /* Pods_tabi_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F314CB627FC7833BD7130 /* Pods_tabi_.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,6 @@
 		6C4102D1260078970023AA12 /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		6C4102D6260078F00023AA12 /* account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = account.swift; sourceTree = "<group>"; };
 		6C4102DB260079120023AA12 /* chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat.swift; sourceTree = "<group>"; };
-		6C4102E026007E590023AA12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C85503B2602441F006B82D9 /* home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = home.storyboard; sourceTree = "<group>"; };
 		6C85504026024443006B82D9 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		6C855045260244AC006B82D9 /* mypage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mypage.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		6C8550542602451E006B82D9 /* recruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = recruit.storyboard; sourceTree = "<group>"; };
 		6C85507F26024981006B82D9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		6CDDAC2226031CB00011422D /* FCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCViewController.swift; sourceTree = "<group>"; };
+		6CDDAC7E260347850011422D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DF5ABB1656855F86C01A823 /* Pods-tabi!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!.debug.xcconfig"; path = "Target Support Files/Pods-tabi!/Pods-tabi!.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E2A8BCA64A06DC3A231DDE /* Pods-tabi!-tabi!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!-tabi!UITests.release.xcconfig"; path = "Target Support Files/Pods-tabi!-tabi!UITests/Pods-tabi!-tabi!UITests.release.xcconfig"; sourceTree = "<group>"; };
 		A7B861A56BA74730ECC48BC6 /* Pods_tabi_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabi_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +193,7 @@
 				6C41027725FFAB9A0023AA12 /* Assets.xcassets */,
 				6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */,
 				6C41027C25FFAB9A0023AA12 /* Info.plist */,
-				6C4102E026007E590023AA12 /* GoogleService-Info.plist */,
+				6CDDAC7E260347850011422D /* GoogleService-Info.plist */,
 			);
 			path = "tabi!";
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				6C85504B260244CC006B82D9 /* mypage.storyboard in Resources */,
 				6C4102D2260078970023AA12 /* chat.storyboard in Resources */,
 				6C41027625FFAB970023AA12 /* Main.storyboard in Resources */,
-				6C4102E126007E590023AA12 /* GoogleService-Info.plist in Resources */,
+				6CDDAC7F260347850011422D /* GoogleService-Info.plist in Resources */,
 				6C3D2F622602E424006246C2 /* login.storyboard in Resources */,
 				6C85503C2602441F006B82D9 /* home.storyboard in Resources */,
 			);
