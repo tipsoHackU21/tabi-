@@ -84,7 +84,7 @@
 		6C85504F2602450A006B82D9 /* recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recruit.swift; sourceTree = "<group>"; };
 		6C8550542602451E006B82D9 /* recruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = recruit.storyboard; sourceTree = "<group>"; };
 		6C85507F26024981006B82D9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6CDDAC7E260347850011422D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CDDAC7E260347850011422D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CDDAC8C26037B0D0011422D /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		8DF5ABB1656855F86C01A823 /* Pods-tabi!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!.debug.xcconfig"; path = "Target Support Files/Pods-tabi!/Pods-tabi!.debug.xcconfig"; sourceTree = "<group>"; };
 		A3E2A8BCA64A06DC3A231DDE /* Pods-tabi!-tabi!UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!-tabi!UITests.release.xcconfig"; path = "Target Support Files/Pods-tabi!-tabi!UITests/Pods-tabi!-tabi!UITests.release.xcconfig"; sourceTree = "<group>"; };
