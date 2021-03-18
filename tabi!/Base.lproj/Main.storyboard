@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bS5-NQ-32s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6le-w9-nEN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,6 +30,38 @@
             </objects>
             <point key="canvasLocation" x="216" y="-269"/>
         </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="E49-vo-vcB">
+            <objects>
+                <viewController id="6le-w9-nEN" customClass="SignInViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYs-J8-lzG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZQ-ac-Cjy">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WOX-J8-Cj0"/>
+                                    <constraint firstAttribute="height" constant="100" id="kP1-ce-QLT"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ic_microsoft.png"/>
+                                <connections>
+                                    <segue destination="bS5-NQ-32s" kind="show" id="M9M-WN-cfF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tfb-AU-0Za"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <constraints>
+                            <constraint firstItem="SZQ-ac-Cjy" firstAttribute="centerY" secondItem="BYs-J8-lzG" secondAttribute="centerY" id="3qA-2G-rIx"/>
+                            <constraint firstItem="SZQ-ac-Cjy" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="iUA-NW-Phy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ay1-fn-Ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1225" y="-289"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ppY-W6-lwQ">
             <objects>
@@ -39,11 +73,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BQz-zY-H8l" kind="relationship" relationship="viewControllers" id="UOz-Aa-xcH"/>
                         <segue destination="EQ7-yP-hfW" kind="relationship" relationship="viewControllers" id="TVB-U9-grc"/>
                         <segue destination="7HW-Ox-3Ja" kind="relationship" relationship="viewControllers" id="tK9-s7-Zga"/>
                         <segue destination="YIP-lh-UE4" kind="relationship" relationship="viewControllers" id="kzU-77-zca"/>
                         <segue destination="q9U-q9-r86" kind="relationship" relationship="viewControllers" id="lLT-NL-a9L"/>
+                        <segue destination="BQz-zY-H8l" kind="relationship" relationship="viewControllers" id="GhS-DF-Hg3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igX-ZU-1IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,4 +118,10 @@
             <point key="canvasLocation" x="239" y="3"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_microsoft.png" width="13.241379737854004" height="13.241379737854004"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
