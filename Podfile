@@ -16,16 +16,31 @@ target 'tabi!' do
     # Pods for testing
   end
   
+  platform :ios, '9,0'
+  
+  source 'https://cdn.cocoapods.org/'
+  
   # add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseUI'
-  pod 'FirebaseFirestoreSwift'
-  pod 'FirebaseUI/Google'
-  pod 'Firebase/Auth'
-  # add pods for any other desired Firebase products
+#  pod 'Firebase/Analytics'
+#  pod 'Firebase/Core'
+#  pod 'Firebase/Firestore'
+#  pod 'FirebaseUI'
+#  pod 'FirebaseFirestoreSwift'
+#  pod 'FirebaseUI/Google'
+#  pod 'Firebase/Auth'
+#  # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
+  
+  pod 'Firebase/AdMob'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Crashlytics'
+  pod 'GoogleSignIn'
+
+#  pod 'GoogleSignIn', '~> 5.0'
+
   
   #warning消したい
   

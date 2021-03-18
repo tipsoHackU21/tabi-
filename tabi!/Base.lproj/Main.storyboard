@@ -45,9 +45,6 @@
                                     <constraint firstAttribute="height" constant="100" id="kP1-ce-QLT"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="ic_microsoft.png"/>
-                                <connections>
-                                    <segue destination="bS5-NQ-32s" kind="show" id="M9M-WN-cfF"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tfb-AU-0Za"/>
@@ -57,10 +54,13 @@
                             <constraint firstItem="SZQ-ac-Cjy" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="iUA-NW-Phy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="iUA-NW-Phy" id="FH9-GX-oEo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay1-fn-Ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1225" y="-289"/>
+            <point key="canvasLocation" x="-1226.0869565217392" y="-289.28571428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ppY-W6-lwQ">
