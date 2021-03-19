@@ -19,11 +19,17 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FirebaseAuth
+import FirebaseDatabase
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
   var handle: AuthStateDidChangeListenerHandle?
+    
+    var databaseRef: DatabaseReference! = Database.database().reference()
+//    var db: Firestore! = Firestore.firestore()
+    var db: Firestore!
+    
        
     
     override func viewDidLoad() {
@@ -31,8 +37,10 @@ class SignInViewController: UIViewController {
       GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         var userdesu2 = Auth.auth().currentUser?.displayName;
-        print("情報2")
+        print("ユーザー情報")
         print(userdesu2)
+        db = Firestore.firestore()
+        let userRef = db.collection("Users")
       handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
         if user != nil {
           MeasurementHelper.sendLoginEvent()
@@ -41,7 +49,45 @@ class SignInViewController: UIViewController {
         }
       }
         
+        //dbの一覧表示
+        databaseRef.observe(.childAdded, with: { snapshot in
+            dump(snapshot)
+            if let obj = snapshot.value as? [String : AnyObject], let name = obj["name"] as? String, let message = obj["message"] {
+           }
+        })
+        //ユーザーのID
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        print("ユーザーのID")
+        print(uid)
+
+        db.collection("Users").whereField("ID", isEqualTo: uid)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("ゆいな")
+                    print("Error getting documents: \(err)")
+                } else {
+                    print("かのこ")
+                    print("")
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+        
         //AuthのID → Databaseのuserにいれば参照
+        print("セットして〜！")
+        // Add a new document in collection "cities"
+        
+        let docRef_user = db.collection("Users").document("User1")
+        
+        docRef_user.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
         
         //AuthのID → いなければ追加 → 登録画面
     }
