@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="0SH-mD-rjr"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" selectedImage="house.fill" catalog="system" id="MV6-Te-6cp"/>
+                    <tabBarItem key="tabBarItem" title="home" image="house.fill" catalog="system" id="Qkn-K1-luC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M45-Pi-OQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat-->
+        <!--chat-->
         <scene sceneID="fwX-vd-aVx">
             <objects>
                 <viewController id="T16-k8-WdT" customClass="chat" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,6 +32,8 @@
                             <constraint firstItem="Wf9-jG-wZx" firstAttribute="centerY" secondItem="Ml8-io-1df" secondAttribute="centerY" id="siS-dU-wi6"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="chat" image="text.bubble" catalog="system" id="6jW-rf-ejC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufa-yB-Cab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,6 +211,7 @@
     <resources>
         <image name="ic_add_a_photo" width="24" height="24"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--mypage-->
+        <!--MyPage-->
         <scene sceneID="Zif-wU-HBm">
             <objects>
                 <viewController id="jgI-dM-rI8" customClass="mypage" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,11 +46,7 @@
                             <constraint firstItem="BA0-gT-M9c" firstAttribute="trailing" secondItem="pd5-UB-XUP" secondAttribute="trailing" id="y7q-ug-9rH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="mypage" id="MTn-iQ-02Q">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="SelectedImage" value="person.fill"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="MyPage" image="ic_account_circle.png" selectedImage="person.crop.square" catalog="system" id="puN-as-CL6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MyPage" destination="BA0-gT-M9c" id="KHw-Eb-0b8"/>
@@ -63,7 +59,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.fill" width="128" height="128"/>
+        <image name="ic_account_circle.png" width="128" height="128"/>
+        <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

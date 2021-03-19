@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--account-->
+        <!--travel-->
         <scene sceneID="XwR-vh-97k">
             <objects>
                 <viewController id="NhQ-ao-MJt" customClass="account" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,8 @@
                         <viewLayoutGuide key="safeArea" id="hBc-vT-2sQ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="account" selectedImage="ic_google.png" id="OXE-pG-RYI"/>
+
+                    <tabBarItem key="tabBarItem" title="travel" image="figure.walk" catalog="system" id="X1x-rQ-WPn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRS-TV-p8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +27,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_google.png" width="24" height="24"/>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
