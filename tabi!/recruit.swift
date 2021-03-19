@@ -34,22 +34,29 @@ let tableData = [section0, section1, section2]
 
 class recruit: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+
+    @IBOutlet weak var mytableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ビューのサイズ指定
-//        CGRect viewRect = CGRectMake(0, 0, 100, 200);
-//        UIView* testView = [[UIView alloc] initWithFrame:viewRect];
-        
+//        //ビューのサイズ指定
+//        CGRect viewRect = CGRectMake(0, 0, 100, 200)
+//        UIView* testView = [[UIView alloc] initWithFrame:viewRect]
+        /*let viewRect=CGRect(x:100,y:100,width:100,height:100)
+        //= init(x: 100, y: 100, width: 100, height: 100)
         // テーブルビューを作る
-        let myTableView:UITableView!
-        myTableView = UITableView(frame: view.frame , style: .grouped)
+        let myTableView = UITableView(frame: viewRect, style: .grouped)
         // テーブルビューのデリゲートを設定する
         myTableView.delegate = self
         // テーブルビューのデータソースを設定する
         myTableView.dataSource = self
         // テーブルビューを表示する
-        view.addSubview(myTableView)
+        view.addSubview(myTableView)*/
+        
+        mytableview.delegate=self
+        mytableview.dataSource = self
+        view.addSubview(mytableview)
+        
     }
     
     /*　UITableViewDataSourceプロトコル */

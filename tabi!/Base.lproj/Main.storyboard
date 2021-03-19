@@ -56,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="XId-aw-EEB" id="EFZ-GS-GtX"/>
-                        <segue destination="bS5-NQ-32s" kind="show" identifier="SignInToFP" id="c9H-FU-buE"/>
+                        <segue destination="bS5-NQ-32s" kind="showDetail" identifier="SignInToFP" id="c9H-FU-buE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay1-fn-Ykb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -74,8 +74,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EQ7-yP-hfW" kind="relationship" relationship="viewControllers" id="TVB-U9-grc"/>
                         <segue destination="7HW-Ox-3Ja" kind="relationship" relationship="viewControllers" id="tK9-s7-Zga"/>
+                        <segue destination="EQ7-yP-hfW" kind="relationship" relationship="viewControllers" id="TVB-U9-grc"/>
                         <segue destination="YIP-lh-UE4" kind="relationship" relationship="viewControllers" id="kzU-77-zca"/>
                         <segue destination="q9U-q9-r86" kind="relationship" relationship="viewControllers" id="lLT-NL-a9L"/>
                         <segue destination="BQz-zY-H8l" kind="relationship" relationship="viewControllers" id="GhS-DF-Hg3"/>
@@ -83,7 +83,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igX-ZU-1IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-525" y="-303"/>
+            <point key="canvasLocation" x="-397" y="-289"/>
         </scene>
         <!--chat-->
         <scene sceneID="VMr-ZB-NP0">

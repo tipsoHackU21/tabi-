@@ -25,8 +25,8 @@
                                     <navigationItem title="マイページ" id="rRw-6W-LDM"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja8-dz-Aw5">
-                                <rect key="frame" x="184" y="224" width="200" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja8-dz-Aw5">
+                                <rect key="frame" x="20" y="109" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Nz3-0d-DS5"/>
                                     <constraint firstAttribute="width" constant="200" id="RGX-IX-4lD"/>
@@ -59,7 +59,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_account_circle.png" width="60" height="60"/>
+        <image name="ic_account_circle.png" width="128" height="128"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
