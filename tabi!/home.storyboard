@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--home-->
         <scene sceneID="w3d-Ct-bxH">
             <objects>
                 <viewController storyboardIdentifier="home" id="NVH-Bl-dm6" customClass="home" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +18,8 @@
                         <viewLayoutGuide key="safeArea" id="0SH-mD-rjr"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="home" image="house.fill" catalog="system" id="Qkn-K1-luC"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M45-Pi-OQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,6 +27,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
