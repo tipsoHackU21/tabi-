@@ -20,7 +20,7 @@ import Firebase
 import GoogleSignIn
 import FirebaseAuth
 import FirebaseDatabase
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
