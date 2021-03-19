@@ -20,6 +20,7 @@ import Firebase
 import GoogleSignIn
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseFirestoreSwift
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
@@ -80,6 +81,10 @@ class SignInViewController: UIViewController {
         
         let docRef_user = db.collection("Users").document("User1")
         
+//        {(引数名1: 型, 引数名2: 型...) -> 戻り値の型 in
+//          クロージャの実行時に実行される文
+//          必要に応じてreturn文で戻り値を返却する
+//        }
         docRef_user.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
