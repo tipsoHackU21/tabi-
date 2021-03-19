@@ -24,21 +24,13 @@ import FirebaseAuth
 class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
   var handle: AuthStateDidChangeListenerHandle?
-    
-    //追加
-//    GIDSignIn.sharedInstance()?.uiDelegate = self
-    
+       
     
     override func viewDidLoad() {
       super.viewDidLoad()
-//      GIDSignIn.sharedInstance().uiDelegate = self
       GIDSignIn.sharedInstance()?.presentingViewController = self
-//      GIDSignIn.sharedInstance().signInSilently()
         GIDSignIn.sharedInstance().signIn()
-        var userdesu = Auth.auth().currentUser;
         var userdesu2 = Auth.auth().currentUser?.displayName;
-        print("情報1:")
-        print(userdesu)
         print("情報2")
         print(userdesu2)
       handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
@@ -48,6 +40,10 @@ class SignInViewController: UIViewController {
           self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
         }
       }
+        
+        //AuthのID → Databaseのuserにいれば参照
+        
+        //AuthのID → いなければ追加 → 登録画面
     }
 
   deinit {
