@@ -19,11 +19,15 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FirebaseAuth
+import FirebaseDatabase
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
   var handle: AuthStateDidChangeListenerHandle?
+    
+    var databaseRef: DatabaseReference! = Database.database().reference()
+    var db: Firestore! = Firestore.firestore()
        
     
     override func viewDidLoad() {
@@ -31,8 +35,9 @@ class SignInViewController: UIViewController {
       GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         var userdesu2 = Auth.auth().currentUser?.displayName;
-        print("情報2")
+        print("ユーザー情報")
         print(userdesu2)
+        
       handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
         if user != nil {
           MeasurementHelper.sendLoginEvent()
@@ -41,6 +46,23 @@ class SignInViewController: UIViewController {
         }
       }
         
+        //dbの一覧表示
+        databaseRef.observe(.childAdded, with: { snapshot in
+            dump(snapshot)
+            if let obj = snapshot.value as? [String : AnyObject], let name = obj["name"] as? String, let message = obj["message"] {
+           }
+        })
+        db.collection("Users").whereField("ID", isEqualTo: true)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+        }
+
         //AuthのID → Databaseのuserにいれば参照
         
         //AuthのID → いなければ追加 → 登録画面
