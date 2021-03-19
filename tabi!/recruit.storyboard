@@ -66,6 +66,9 @@
                             <constraint firstItem="Ksf-9M-2ad" firstAttribute="trailing" secondItem="UNq-j2-OnZ" secondAttribute="trailing" constant="50" id="tOn-dw-LjZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mytableview" destination="6Nn-ta-xCk" id="SFH-sc-s6j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMt-hX-BXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
