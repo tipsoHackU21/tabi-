@@ -12,7 +12,7 @@
         <scene sceneID="Hlw-H2-IOf">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="home" storyboardName="home" referencedIdentifier="home" id="BQz-zY-H8l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="x5t-g2-8Ld"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="homekit" catalog="system" id="x5t-g2-8Ld"/>
                     <navigationItem key="navigationItem" id="Kdf-Mi-4c1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbB-rE-dA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
         <scene sceneID="VMr-ZB-NP0">
             <objects>
                 <viewControllerPlaceholder storyboardName="chat" id="7HW-Ox-3Ja" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pCZ-7f-3nY"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" badgeValue="chat" id="pCZ-7f-3nY"/>
                     <navigationItem key="navigationItem" id="NJU-t7-Qaq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7W-wq-rEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,6 +120,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

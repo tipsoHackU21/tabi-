@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Account-->
+        <!--travel-->
         <scene sceneID="XwR-vh-97k">
             <objects>
                 <viewController id="NhQ-ao-MJt" customClass="account" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +18,8 @@
                         <viewLayoutGuide key="safeArea" id="hBc-vT-2sQ"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="travel" image="figure.walk" catalog="system" id="X1x-rQ-WPn"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRS-TV-p8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,6 +27,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
