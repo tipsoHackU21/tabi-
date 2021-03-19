@@ -15,8 +15,56 @@
                     <view key="view" contentMode="scaleToFill" id="xrP-aT-z0c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQF-ki-ob3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="9W5-ZG-J5d"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="tOi-5X-fKP"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My募集一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNq-j2-OnZ">
+                                <rect key="frame" x="50" y="180" width="314" height="50"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sAG-jP-21u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Nn-ta-xCk">
+                                <rect key="frame" x="50" y="280" width="314" height="532"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6yH-QD-QJE">
+                                        <rect key="frame" x="0.0" y="28" width="314" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6yH-QD-QJE" id="w0a-sE-P8y">
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="Cell"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ksf-9M-2ad"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UQF-ki-ob3" firstAttribute="leading" secondItem="Ksf-9M-2ad" secondAttribute="leading" id="428-xN-aGo"/>
+                            <constraint firstItem="6Nn-ta-xCk" firstAttribute="leading" secondItem="Ksf-9M-2ad" secondAttribute="leading" constant="50" id="8v9-XP-D8G"/>
+                            <constraint firstItem="UQF-ki-ob3" firstAttribute="top" secondItem="xrP-aT-z0c" secondAttribute="top" id="OFT-8U-Kdd"/>
+                            <constraint firstItem="UNq-j2-OnZ" firstAttribute="top" secondItem="UQF-ki-ob3" secondAttribute="bottom" constant="30" id="QPE-E1-oaY"/>
+                            <constraint firstItem="Ksf-9M-2ad" firstAttribute="trailing" secondItem="6Nn-ta-xCk" secondAttribute="trailing" constant="50" id="bjF-DO-fvO"/>
+                            <constraint firstItem="Ksf-9M-2ad" firstAttribute="bottom" secondItem="6Nn-ta-xCk" secondAttribute="bottom" constant="50" id="jrd-kX-Xcg"/>
+                            <constraint firstItem="UQF-ki-ob3" firstAttribute="trailing" secondItem="Ksf-9M-2ad" secondAttribute="trailing" id="lfS-XO-ZZo"/>
+                            <constraint firstItem="UNq-j2-OnZ" firstAttribute="leading" secondItem="Ksf-9M-2ad" secondAttribute="leading" constant="50" id="njH-6b-7Vz"/>
+                            <constraint firstItem="6Nn-ta-xCk" firstAttribute="top" secondItem="UNq-j2-OnZ" secondAttribute="bottom" constant="50" id="quh-1p-cS1"/>
+                            <constraint firstItem="Ksf-9M-2ad" firstAttribute="trailing" secondItem="UNq-j2-OnZ" secondAttribute="trailing" constant="50" id="tOn-dw-LjZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMt-hX-BXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,8 +73,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
