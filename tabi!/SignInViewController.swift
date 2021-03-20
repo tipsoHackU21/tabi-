@@ -30,6 +30,8 @@ class SignInViewController: UIViewController {
     var databaseRef: DatabaseReference! = Database.database().reference()
 //    var db: Firestore! = Firestore.firestore()
     var db: Firestore!
+    //読み取り
+    var ref: DatabaseReference!
     
        
     
@@ -61,38 +63,49 @@ class SignInViewController: UIViewController {
         print("ユーザーのID")
         print(uid)
 
-        db.collection("Users").whereField("ID", isEqualTo: uid)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("ゆいな")
-                    print("Error getting documents: \(err)")
-                } else {
-                    print("かのこ")
-                    print("")
-                    for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                }
+        let docRef1 = db.collection("Users").document("User1")
+        let docRef2 = db.collection("Destinations").document("Japan")
+
+        docRef1.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document dataですよ: \(dataDescription)")
+                print("キャノコ")
+            } else {
+                print("Document does not exist")
+                print("キャノコです")
+            }
+        }
+        docRef2.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document dataです: \(dataDescription)")
+                print("キャノコ〜〜〜〜")
+            } else {
+                print("Document does not exist")
+                print("キャノコですかい")
+            }
         }
         
         //AuthのID → Databaseのuserにいれば参照
         print("セットして〜！")
         // Add a new document in collection "cities"
         
-        let docRef_user = db.collection("Users").document("User1")
-        
+//        let docRef_user = db.collection("Users").document("User1")
+
+       
 //        {(引数名1: 型, 引数名2: 型...) -> 戻り値の型 in
 //          クロージャの実行時に実行される文
 //          必要に応じてreturn文で戻り値を返却する
 //        }
-        docRef_user.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
+//        docRef_user.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
         
         //AuthのID → いなければ追加 → 登録画面
     }
