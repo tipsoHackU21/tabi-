@@ -13,7 +13,7 @@ class chat: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        databaseRef = Database.database().reference()
+        /*databaseRef = Database.database().reference()
 
         databaseRef.observe(.childAdded, with: { snapshot in
             dump(snapshot)
@@ -24,11 +24,11 @@ class chat: UIViewController {
         })
 
         NotificationCenter.default.addObserver(self, selector: #selector(chat.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(chat.keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(chat.keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)*/
 
     }
 
-    @IBAction func tappedSendButton(_ sender: Any) {
+    /*@IBAction func tappedSendButton(_ sender: Any) {
         view.endEditing(true)
 
         if let name = nameInputView.text, let message = messageInputView.text {
@@ -48,6 +48,6 @@ class chat: UIViewController {
 
     @objc func keyboardWillHide(_ notification: NSNotification){
         inputViewBottomMargin.constant = 0
-    }
+    }*/
 
 }

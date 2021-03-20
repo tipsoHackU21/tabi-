@@ -31,32 +31,41 @@ let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","ア
 let section1 = [("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
 let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
 let tableData = [section0, section1, section2]
+let viewRect=CGRect(x:50,y:280,width:314,height:532)
+// テーブルビューを作る
+let myTableView = UITableView(frame: viewRect, style: .grouped)
+
 
 class recruit: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    //var tap = false
     
 
-    @IBOutlet weak var mytableview: UITableView!
+    @IBAction func appear(_ sender: Any) {
+        
+        // テーブルビューのデリゲートを設定する
+            myTableView.delegate = self
+            // テーブルビューのデータソースを設定する
+            myTableView.dataSource = self
+        
+        
+        
+        if(myTableView.isHidden==false){
+            // テーブルビューを表示する
+            view.addSubview(myTableView)
+            myTableView.isHidden = !myTableView.isHidden
+        }else{
+            print("猫です")
+            //tap = false
+            myTableView.isHidden = !myTableView.isHidden
+        }
+    }
+    
+    
+    //@IBOutlet weak var mytableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        //ビューのサイズ指定
-//        CGRect viewRect = CGRectMake(0, 0, 100, 200)
-//        UIView* testView = [[UIView alloc] initWithFrame:viewRect]
-        /*let viewRect=CGRect(x:100,y:100,width:100,height:100)
-        //= init(x: 100, y: 100, width: 100, height: 100)
-        // テーブルビューを作る
-        let myTableView = UITableView(frame: viewRect, style: .grouped)
-        // テーブルビューのデリゲートを設定する
-        myTableView.delegate = self
-        // テーブルビューのデータソースを設定する
-        myTableView.dataSource = self
-        // テーブルビューを表示する
-        view.addSubview(myTableView)*/
-        
-        mytableview.delegate=self
-        mytableview.dataSource = self
-        view.addSubview(mytableview)
-        
+
     }
     
     /*　UITableViewDataSourceプロトコル */
