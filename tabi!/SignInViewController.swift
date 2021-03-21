@@ -48,23 +48,34 @@ class SignInViewController: UIViewController {
         
         //ユーザーのIDがあればそのまま、なければ更新
         guard let userID = Auth.auth().currentUser?.uid else { return }
-//        self.ref.child("Users").child(userID).observe(eventType: DataEventType, with: (Datasnapshot) -> Void)
-        self.ref.child("Users").child(userID).setValue(["Comment": "へいへい！", "ID" : nil, "UserName" : username])
-//        self.ref.child("Users").observe(.value) { (snapShot) in
-//            let json = JSON(snapShot.value as? [String : AnyObject] ?? [:])
-//        
+    
+//        self.ref.child("Users").child(userID).setValue(["Comment": "へいへい！", "ID" : nil, "UserName" : username])
+        let x = self.ref.child("Users/\(userID)/Registered").observe(.value) { (snapShot) -> Void in
+            print("どうかな")
+            let data = snapShot.value!
+            print("何か入ってた_\(data)")
+            if data != nil{
+                print("登録済み")
+            }
+            else{
+                //未登録の場合、登録画面へ
+                self.ref.child("Users").child(userID).setValue(["Register" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username])
+            }
+        }
+        
         //謎
-            let userRef = self.db.collection("Users")
-            self.handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
+        let userRef = self.db.collection("Users")
+        self.handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
         if user != nil {
           MeasurementHelper.sendLoginEvent()
           print("セグエするぞ〜")
           self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
         }
-        
-        
-        
+            print(type(of:  self.handle ))
+
       }
+        
+        
         
         //dbの一覧表示
 //        databaseRef.observe(.childAdded, with: { snapshot in
