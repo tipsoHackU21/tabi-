@@ -21,75 +21,101 @@ import GoogleSignIn
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseFirestore
+//import SwiftyJSON
 
 @objc(SignInViewController)
 class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
-  var handle: AuthStateDidChangeListenerHandle?
+    var handle: AuthStateDidChangeListenerHandle?
     
-    var databaseRef: DatabaseReference! = Database.database().reference()
-//    var db: Firestore! = Firestore.firestore()
-    var db: Firestore!
     //読み取り
+    var databaseRef: DatabaseReference! = Database.database().reference()
+    var db: Firestore!
     var ref: DatabaseReference!
-    
-       
+    var docRef: DocumentReference!
     
     override func viewDidLoad() {
-      super.viewDidLoad()
-      GIDSignIn.sharedInstance()?.presentingViewController = self
+        //諸々
+        super.viewDidLoad()
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
-        var userdesu2 = Auth.auth().currentUser?.displayName;
-        print("ユーザー情報")
-        print(userdesu2)
         db = Firestore.firestore()
-        let userRef = db.collection("Users")
-      handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
+        ref = Database.database().reference()
+        
+        //ユーザー情報
+        var username = Auth.auth().currentUser?.displayName;
+        print("現在のユーザーは \(username)です")
+        
+        //ユーザーのIDがあればそのまま、なければ更新
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+//        self.ref.child("Users").child(userID).observe(eventType: DataEventType, with: (Datasnapshot) -> Void)
+        self.ref.child("Users").child(userID).setValue(["Comment": "へいへい！", "ID" : nil, "UserName" : username])
+//        self.ref.child("Users").observe(.value) { (snapShot) in
+//            let json = JSON(snapShot.value as? [String : AnyObject] ?? [:])
+//        
+        //謎
+            let userRef = self.db.collection("Users")
+            self.handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
         if user != nil {
           MeasurementHelper.sendLoginEvent()
           print("セグエするぞ〜")
           self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
         }
+        
+        
+        
       }
         
         //dbの一覧表示
-        databaseRef.observe(.childAdded, with: { snapshot in
-            dump(snapshot)
-            if let obj = snapshot.value as? [String : AnyObject], let name = obj["name"] as? String, let message = obj["message"] {
-           }
-        })
-        //ユーザーのID
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        print("ユーザーのID")
-        print(uid)
+//        databaseRef.observe(.childAdded, with: { snapshot in
+//            dump(snapshot)
+//            if let obj = snapshot.value as? [String : AnyObject], let name = obj["name"] as? String, let message = obj["message"] {
+//           }
+//        })
+//
 
-        let docRef1 = db.collection("Users").document("User1")
-        let docRef2 = db.collection("Destinations").document("Japan")
-
-        docRef1.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document dataですよ: \(dataDescription)")
-                print("キャノコ")
-            } else {
-                print("Document does not exist")
-                print("キャノコです")
-            }
-        }
-        docRef2.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document dataです: \(dataDescription)")
-                print("キャノコ〜〜〜〜")
-            } else {
-                print("Document does not exist")
-                print("キャノコですかい")
-            }
-        }
-        
-        //AuthのID → Databaseのuserにいれば参照
-        print("セットして〜！")
-        // Add a new document in collection "cities"
+//
+//        databaseRef.child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+//          // Get user value
+//          let value = snapshot.value as? NSDictionary
+//            _ = value?["username"] as? String ?? ""
+////          let user = User(username: username)
+//            print("ここだよ")
+//
+//          // ...
+//          }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//        print("ユーザーのID")
+//        print(uid)
+//
+//        let docRef1 = db.collection("Users").document("User1")
+//        let docRef2 = db.collection("Destinations").document("Japan")
+//
+//        docRef1.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document dataですよ: \(dataDescription)")
+//                print("キャノコ")
+//            } else {
+//                print("Document does not exist")
+//                print("キャノコです")
+//            }
+//        }
+//        docRef2.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document dataです: \(dataDescription)")
+//                print("キャノコ〜〜〜〜")
+//            } else {
+//                print("Document does not exist")
+//                print("キャノコですかい")
+//            }
+//        }
+//
+//        //AuthのID → Databaseのuserにいれば参照
+//        print("セットして〜！")
+//        // Add a new document in collection "cities"
         
 //        let docRef_user = db.collection("Users").document("User1")
 
@@ -107,12 +133,11 @@ class SignInViewController: UIViewController {
 //            }
 //        }
         
-        //AuthのID → いなければ追加 → 登録画面
     }
 
-  deinit {
-    if let handle = handle {
-      Auth.auth().removeStateDidChangeListener(handle)
-    }
-  }
+//  deinit {
+//    if let handle = handle {
+//      Auth.auth().removeStateDidChangeListener(handle)
+//    }
+//  }
 }
