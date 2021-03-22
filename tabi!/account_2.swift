@@ -6,13 +6,10 @@
 //
 
 import Foundation
-import FirebaseAuth
 import UIKit
 
 class account_2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
 }
