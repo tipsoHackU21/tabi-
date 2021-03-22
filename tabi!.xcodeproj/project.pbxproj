@@ -37,6 +37,7 @@
 		6FA56E5844975A189155F4A6 /* Pods_tabi_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70F314CB627FC7833BD7130 /* Pods_tabi_.framework */; };
 		C9732D772608972A00D0CF29 /* recruit_confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9732D762608972900D0CF29 /* recruit_confirm.swift */; };
 		C9732D7C2608988A00D0CF29 /* recruit2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9732D7B2608988A00D0CF29 /* recruit2.swift */; };
+		C9732D872608E71900D0CF29 /* account_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9732D862608E71900D0CF29 /* account_3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		C5E6B2F9A5DCE518926ABE59 /* Pods-tabi!Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!Tests.debug.xcconfig"; path = "Target Support Files/Pods-tabi!Tests/Pods-tabi!Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9732D762608972900D0CF29 /* recruit_confirm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recruit_confirm.swift; sourceTree = "<group>"; };
 		C9732D7B2608988A00D0CF29 /* recruit2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recruit2.swift; sourceTree = "<group>"; };
+		C9732D862608E71900D0CF29 /* account_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = account_3.swift; sourceTree = "<group>"; };
 		D2102E65DFEC0252B9C40F02 /* Pods_tabi__tabi_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabi__tabi_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70F314CB627FC7833BD7130 /* Pods_tabi_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabi_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99F4211E9C7775B2DDACE3C /* Pods-tabi!Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabi!Tests.release.xcconfig"; path = "Target Support Files/Pods-tabi!Tests/Pods-tabi!Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				6C41027925FFAB9A0023AA12 /* LaunchScreen.storyboard */,
 				6C41027C25FFAB9A0023AA12 /* Info.plist */,
 				6CDDAC7E260347850011422D /* GoogleService-Info.plist */,
+				C9732D862608E71900D0CF29 /* account_3.swift */,
 			);
 			path = "tabi!";
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				6C85508026024981006B82D9 /* SignInViewController.swift in Sources */,
 				C9732D7C2608988A00D0CF29 /* recruit2.swift in Sources */,
 				6C41026F25FFAB970023AA12 /* AppDelegate.swift in Sources */,
+				C9732D872608E71900D0CF29 /* account_3.swift in Sources */,
 				6CDD9A7B26048D9E00F532D5 /* Contents.swift in Sources */,
 				6C3D2F7D2602F526006246C2 /* MeasurementHelper.swift in Sources */,
 				6C41027125FFAB970023AA12 /* SceneDelegate.swift in Sources */,
