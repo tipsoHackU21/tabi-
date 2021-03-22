@@ -53,6 +53,7 @@ class account: UIViewController,MKMapViewDelegate {
         pinView.pinTintColor = UIColor.blue
         let button = UIButton(type: .detailDisclosure)
         button.addTarget(self, action: #selector(buttonEvent(_:)),for:UIControl.Event.touchUpInside)
+        //self.navigationItem.rightBarButtonItem = button
         pinView.rightCalloutAccessoryView = button
         //pinView.canShowCallout = true
         return pinView
@@ -60,11 +61,15 @@ class account: UIViewController,MKMapViewDelegate {
     
     //    ピンの中のiマークを押したときの処理
         @objc func buttonEvent(_ sender: UIButton) {
-            let storyboard: UIStoryboard = self.storyboard!
+            /*let storyboard: UIStoryboard = self.storyboard!
                    // ②遷移先ViewControllerのインスタンス取得
                    let nextView = storyboard.instantiateViewController(withIdentifier: "account_2") as! account_2
                    // ③画面遷移
-                   self.present(nextView, animated: true, completion: nil)
+                   self.present(nextView, animated: true, completion: nil)*/
+            
+            let second = storyboard?.instantiateViewController(withIdentifier: "account_2") as! account_2
+            
+            self.navigationController?.pushViewController(second, animated: true)
 
 
         }
