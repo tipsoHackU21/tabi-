@@ -94,9 +94,8 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     
     @IBAction func confirm(_ sender: Any) {
-        
-        
-        if(!hokkaido.isSelected && !hokuriku.isSelected && !kanto.isSelected && !input_title){
+       
+        if((!hokkaido.isSelected && !hokuriku.isSelected && !kanto.isSelected && !input_title) || titletextfield.text!.isEmpty){
             con.setTitle("すべて入力してください", for: .normal)
         }else{
             con.setTitle("確認", for: .normal)

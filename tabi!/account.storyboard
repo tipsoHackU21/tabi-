@@ -144,6 +144,9 @@
                                 <rect key="frame" x="356" y="540" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="add_button:" destination="p9n-DY-jBu" eventType="touchUpInside" id="Rnq-bi-EJb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-fH-RMm">
                                 <rect key="frame" x="161" y="742" width="92" height="30"/>
@@ -174,6 +177,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwT-4X-Z0u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2371.0144927536235" y="107.8125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UP0-Uy-WXV">
+            <objects>
+                <viewController id="gb5-Ea-50R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLc-oL-7mS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6qc-QD-VzO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGb-Qy-eN9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3345" y="118"/>
         </scene>
         <!--travel-->
         <scene sceneID="EHz-Sw-CUz">
