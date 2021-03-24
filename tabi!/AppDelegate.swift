@@ -24,6 +24,7 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
   var window: UIWindow?
+  var myNavigationController: UINavigationController?
 
   @available(iOS 9.0, *)
   func application(_ application: UIApplication,

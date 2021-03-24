@@ -33,6 +33,11 @@ class SignInViewController: UIViewController {
     var db: Firestore!
     var ref: DatabaseReference!
     var docRef: DocumentReference!
+    var snap : DataSnapshot!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            segue.destination.modalPresentationStyle = .fullScreen
+        }
     
     override func viewDidLoad() {
         //諸々
@@ -42,6 +47,7 @@ class SignInViewController: UIViewController {
         db = Firestore.firestore()
         ref = Database.database().reference()
         
+        
         //ユーザー情報
         var username = Auth.auth().currentUser?.displayName;
         print("現在のユーザーは \(username)です")
@@ -49,17 +55,20 @@ class SignInViewController: UIViewController {
         //ユーザーのIDがあればそのまま、なければ更新
         guard let userID = Auth.auth().currentUser?.uid else { return }
     
-//        self.ref.child("Users").child(userID).setValue(["Comment": "へいへい！", "ID" : nil, "UserName" : username])
-        let x = self.ref.child("Users/\(userID)/Registered").observe(.value) { (snapShot) -> Void in
+        self.ref.child("Users/\(userID)").observe(.value) { (snapShot) -> Void in
             print("どうかな")
             let data = snapShot.value!
-            print("何か入ってた_\(data)")
-            if data != nil{
-                print("登録済み")
+            //snapShot.hasChild : 存在確認
+            print("登録されてる？ -> \(snapShot.hasChild("Registered"))")
+            
+            if snapShot.hasChild("Registered"){
+                //登録されている
             }
             else{
-                //未登録の場合、登録画面へ
-                self.ref.child("Users").child(userID).setValue(["Register" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username])
+                //登録されてない
+                self.ref.child("Users").child("\(userID)").setValue(["Registered" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username, "MyPlans" : ["Plan1"]])
+                //mypageへセグエ → あとで！
+                self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
             }
         }
         
