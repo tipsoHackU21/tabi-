@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +47,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tfb-AU-0Za"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="backgroundColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XId-aw-EEB" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="Eou-lT-kgw"/>
                             <constraint firstItem="XId-aw-EEB" firstAttribute="centerY" secondItem="BYs-J8-lzG" secondAttribute="centerY" id="Pui-CH-RDd"/>
@@ -122,8 +121,5 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
