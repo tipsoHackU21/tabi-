@@ -62,7 +62,8 @@ class SignInViewController: UIViewController {
             }
             else{
                 //登録されてない
-                self.ref.child("Users").child("\(userID)").setValue(["Registered" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username, "MyPlans" : ["Plan1"]])
+                let plans = ["1" : "Plan1"] as [String : Any]
+                self.ref.child("Users").child("\(userID)").setValue(["Registered" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username, "MyPlans" : plans])
                 //mypageへセグエ → あとで！
                 self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
             }
