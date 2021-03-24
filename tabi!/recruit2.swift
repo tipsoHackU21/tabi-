@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 /*import GoogleSignIn
 import FirebaseAuth
@@ -17,14 +19,33 @@ import Firebase*/
 
 class recruit2 : UIViewController, UITextFieldDelegate{
     @IBOutlet weak var titletextfield: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titletextfield.delegate = self
         input_title = false
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+        //ユーザーのプラン追加
+//        self.ref.child("Plans").childByAutoId().setValue(["PlanUser" : userID, "Plannners" : [userID], "Places" : "なし", "When" : "なし", "Schedule" : "なし", "Comment" : "なし"])
+        guard let key = ref.child("Plans").childByAutoId().key else { return }
+        let plan_data = ["Plantheme" : "なし", "PlanUser" : userID, "Plannners" : [userID], "Places" : "なしししし", "When" : "なし", "Schedule" : "なし", "Comment" : "なし"] as [String : Any]
+        let childUpdates_plan = ["/Plans/\(key)/" : plan_data]
+        ref.updateChildValues(childUpdates_plan)
+        //ユーザーにプラン追加
+        
+        //あとで変える
+        let plan_user = ["2" : key] as [String : Any]
+        let childUpdates_user = ["/Users/\(userID)/MyPlans/\(key)/" : plan_user]
+        ref.updateChildValues(childUpdates_user)
+       
     }
     
     
+    
     var input_title = false
+    var ref: DatabaseReference!
 
     @IBOutlet weak var kanto: UIButton!
     @IBOutlet weak var hokkaido: UIButton!
@@ -112,6 +133,10 @@ class recruit2 : UIViewController, UITextFieldDelegate{
             
             let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "confirmpage")
             present(nextVC!, animated: true,completion: nil)
+            
+            //入力事項をセット
+            print("ここに行きたい -> \(tmp_string)")
+            print("ここに行きたい -> \(type(of: tmp_string))")
         }
     }
 }
