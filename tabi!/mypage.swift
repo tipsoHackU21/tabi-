@@ -80,7 +80,7 @@ class mypage: UIViewController {
             while count < strongSelf.messages.count {
                 print("どうですかね")
                 guard let x = strongSelf.messages[count].value as? String else { return }
-                self!.section0.append((x, "プラン"))
+//                self!.section0.append((x, "プラン"))
                 count += 1
             }
             }
