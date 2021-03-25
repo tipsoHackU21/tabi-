@@ -9,6 +9,7 @@ class account: UIViewController,MKMapViewDelegate {
     var ref: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle!
     var messages: [DataSnapshot] = []
+    var PinsData : [Dictionary<String, AnyObject>] = []
 
     var annotationlist = Array<MKPointAnnotation>()
     override func viewDidLoad() {
@@ -104,11 +105,32 @@ class account: UIViewController,MKMapViewDelegate {
         //Destinationsから配列を作る
         _refHandle = self.ref.child("Destinations/").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
                 guard let strongSelf = self else { return }
+                strongSelf.messages = []
                 strongSelf.messages.append(snapshot)
-                print("えへへへへ\(strongSelf.messages)")
-                //配列に変換
+    
+            var count = 0
+            while count < strongSelf.messages.count{
+                if strongSelf.messages.count > count {
+                    print("\(count)ばんめ -> \(strongSelf.messages[count])")
+                    let PinData = strongSelf.messages[count].value as? [String : AnyObject] ?? [:]
+                    print("pinデータ\(PinData)")
+                    print("pinデータタイプ\(type(of:PinData))")
+                    //配列にコメント 緯度経度追加
+                    strongSelf.PinsData.append(PinData)
+                    //そのままデータ追加
+                    let annotation = MKPointAnnotation()
+                    annotation.title = PinData["Plantheme"] as! String
+                    annotation.coordinate.latitude = PinData["latitude"] as! CLLocationDegrees
+                    annotation.coordinate.longitude = PinData["longitude"] as! CLLocationDegrees
+                    strongSelf.annotationlist.append(annotation)
+                    strongSelf.japan_map.addAnnotation(annotation)
+                }
+                count += 1
+            }
+            print("ピン何個？\(strongSelf.PinsData.count)")
+
+            
         })
-        //配列を読み取ってピンを表示
     }
     
     //場所追加する時
@@ -118,6 +140,7 @@ class account: UIViewController,MKMapViewDelegate {
 
         self.ref.child("/Plans/Plan1/Places/latitude").setValue(_lat)
         self.ref.child("/Plans/Plan1/Places/longitude").setValue(_long)
+        
     }
     
 
