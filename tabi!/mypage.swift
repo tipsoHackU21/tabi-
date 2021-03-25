@@ -29,7 +29,7 @@ class mypage: UIViewController {
 //            print("どうかな")
 //
 //        }
-        configureDatabase()
+//        configureDatabase()
         print("どうかなaaaaa")
 //        var count = 0
 //        while count < self.messages.count{

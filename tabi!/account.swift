@@ -2,7 +2,13 @@ import UIKit
 import Foundation
 import FirebaseAuth
 import MapKit
+import FirebaseDatabase
+
 class account: UIViewController,MKMapViewDelegate {
+    
+    var ref: DatabaseReference!
+    fileprivate var _refHandle: DatabaseHandle!
+    var messages: [DataSnapshot] = []
 
     var annotationlist = Array<MKPointAnnotation>()
     override func viewDidLoad() {
@@ -23,8 +29,14 @@ class account: UIViewController,MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = pressCoordinate
         annotation.title = "ここ!"
+        
+        print("どこだい\(annotation.coordinate.latitude)")
+        print("どこだい\(annotation.coordinate.longitude)")
+        
         annotationlist.append(annotation)
         japan_map.addAnnotation(annotation)
+        
+        self.addPlace(_lat: annotation.coordinate.latitude, _long: annotation.coordinate.longitude)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,6 +45,9 @@ class account: UIViewController,MKMapViewDelegate {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
           // ...
         }
+        
+        pins()
+        print("どうかな")
     }
     
    
@@ -80,6 +95,29 @@ class account: UIViewController,MKMapViewDelegate {
             let lastPin = annotationlist.removeLast()
             japan_map.removeAnnotation(lastPin)
         }
+    }
+    
+    //ピンを表示
+    func pins(){
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        //Destinationsから配列を作る
+        _refHandle = self.ref.child("Destinations/").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+                guard let strongSelf = self else { return }
+                strongSelf.messages.append(snapshot)
+                print("えへへへへ\(strongSelf.messages)")
+                //配列に変換
+        })
+        //配列を読み取ってピンを表示
+    }
+    
+    //場所追加する時
+    func addPlace(_lat : Double, _long : Double) -> Void {
+        ref = Database.database().reference()
+//        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        self.ref.child("/Plans/Plan1/Places/latitude").setValue(_lat)
+        self.ref.child("/Plans/Plan1/Places/longitude").setValue(_long)
     }
     
 
