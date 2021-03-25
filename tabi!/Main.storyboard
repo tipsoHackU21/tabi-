@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +48,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tfb-AU-0Za"/>
-                        <color key="backgroundColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstItem="XId-aw-EEB" firstAttribute="centerX" secondItem="BYs-J8-lzG" secondAttribute="centerX" id="Eou-lT-kgw"/>
                             <constraint firstItem="XId-aw-EEB" firstAttribute="centerY" secondItem="BYs-J8-lzG" secondAttribute="centerY" id="Pui-CH-RDd"/>
@@ -70,7 +71,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bv8-Pa-EMk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.060134813189999997" green="0.52211892599999998" blue="0.98477691410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="7HW-Ox-3Ja" kind="relationship" relationship="viewControllers" id="tK9-s7-Zga"/>
@@ -93,7 +94,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7W-wq-rEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="-159"/>
+            <point key="canvasLocation" x="238" y="-125"/>
         </scene>
         <!--recruit-->
         <scene sceneID="Lnl-mF-ft7">
@@ -104,7 +105,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIl-Rj-V7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-68"/>
+            <point key="canvasLocation" x="233" y="-222"/>
         </scene>
         <!--account-->
         <scene sceneID="AYz-v5-DVt">
@@ -121,5 +122,8 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

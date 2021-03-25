@@ -35,6 +35,10 @@ class SignInViewController: UIViewController {
     var docRef: DocumentReference!
     var snap : DataSnapshot!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            segue.destination.modalPresentationStyle = .fullScreen
+        }
+    
     override func viewDidLoad() {
         //諸々
         super.viewDidLoad()
