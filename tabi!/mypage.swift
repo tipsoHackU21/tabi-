@@ -14,7 +14,8 @@ class mypage: UIViewController {
     var ref: DatabaseReference!
     var messages: [DataSnapshot] = []
     var count : Int = 0
-    var section0 = [("キタテハ","タテハチョウ科")]
+//    var section0 : [__NSCFString] = []
+    var section0 : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +35,21 @@ class mypage: UIViewController {
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
 
-        _refHandle = self.ref.child("Users/\(userID)/").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+        _refHandle = self.ref.child("Users/\(userID)").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
                 guard let strongSelf = self else { return }
             
             // プランをsection0に追加する
             self!.section0 = []
             strongSelf.messages.append(snapshot)
             print("マイページい\(strongSelf.messages)")
+            print("マイページい\(type(of : strongSelf.messages))")
             var count = 0
             while count < strongSelf.messages.count{
                 if count < strongSelf.messages.count{
-                   let myData = strongSelf.messages[count].value as? [String] ?? []
+                    let myData = strongSelf.messages[count].value!
                     print("myデータ\(myData)")
                     print("myデータタイプ\(type(of:myData))")
+//                    strongSelf.section0.append(myData as! String )
                 }
                 count += 1
             }
