@@ -93,6 +93,15 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         return false // 改行は入力しない
     }
     
+    //募集地図を立てるための目的地データベース追加
+    func addDestination(_lat : Double, _long : Double, _PlanID : String) -> Void {
+        ref = Database.database().reference()
+        guard (Auth.auth().currentUser?.uid) != nil else { return }
+
+        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long])
+//        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
+    }
+    
     
     
     
@@ -137,6 +146,8 @@ class recruit2 : UIViewController, UITextFieldDelegate{
             let plan_user = ["\(titletextfield.text!)" : key] as [String : Any]
             let childUpdates_user = ["/Users/\(userID)/MyPlans/\(key)/" : plan_user]
             ref.updateChildValues(childUpdates_user)
+            
+            self.addDestination(_lat: 0, _long: 0, _PlanID: "\(key)")
 
         }
     }
