@@ -83,6 +83,9 @@ class account: UIViewController,MKMapViewDelegate {
                    // ③画面遷移
                    self.present(nextView, animated: true, completion: nil)*/
             
+            let defaults = UserDefaults.standard
+            defaults.set("x", forKey: "y")
+            
             let second = storyboard?.instantiateViewController(withIdentifier: "account_2") as! account_2
             
             self.navigationController?.pushViewController(second, animated: true)
