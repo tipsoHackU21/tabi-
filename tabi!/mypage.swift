@@ -76,13 +76,13 @@ class mypage: UIViewController {
             self!.section0 = []
             strongSelf.messages.append(snapshot)
             
-            var count = 0
-            while count < strongSelf.messages.count {
-                print("どうですかね")
-                guard let x = strongSelf.messages[count].value as? String else { return }
-//                self!.section0.append((x, "プラン"))
-                count += 1
-            }
+//            var count = 0
+//            while count < strongSelf.messages.count {
+//                print("どうですかね")
+//                guard (strongSelf.messages[count].value as? String) != nil else { return }
+////                self!.section0.append((x, "プラン"))
+//                count += 1
+//            }
             }
             // 全ての非同期処理完了後にメインスレッドで処理
             dispatchGroup.notify(queue: .main) {
