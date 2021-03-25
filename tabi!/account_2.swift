@@ -4,6 +4,8 @@ import UIKit
 class account_2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        print("どうかな\(defaults.string(forKey: "y"))")
         
     }
     
