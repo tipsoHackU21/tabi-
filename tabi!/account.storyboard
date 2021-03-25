@@ -20,9 +20,6 @@
                                 <rect key="frame" x="44" y="163" width="327" height="473"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="abt-dJ-Baa" appends="YES" id="DUJ-BX-igj"/>
-                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGJ-fT-Wjm">
                                 <rect key="frame" x="300" y="671" width="74" height="22"/>
@@ -43,11 +40,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRS-TV-p8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="abt-dJ-Baa">
-                    <connections>
-                        <action selector="LongPress:" destination="NhQ-ao-MJt" id="oBe-Ky-P8C"/>
-                    </connections>
-                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="abt-dJ-Baa"/>
             </objects>
             <point key="canvasLocation" x="598.55072463768124" y="89.732142857142847"/>
         </scene>
