@@ -61,6 +61,6 @@ class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UI
         return false // 改行は入力しない
     }
     @IBAction func add_button(_ sender: Any) {
-        plan_array.append([,"a"])
+//        plan_array.append([,"a"])
     }
 }
