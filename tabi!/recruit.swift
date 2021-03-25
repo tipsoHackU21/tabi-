@@ -58,7 +58,7 @@ class recruit: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+        guard (Auth.auth().currentUser?.uid) != nil else { return }
         //プラン一覧を表示したい
         tableData = [section0]
         configureDatabase()

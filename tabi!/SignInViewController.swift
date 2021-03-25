@@ -45,15 +45,15 @@ class SignInViewController: UIViewController {
         
         
         //ユーザー情報
-        var username = Auth.auth().currentUser?.displayName;
-        print("現在のユーザーは \(username)です")
+        let username = Auth.auth().currentUser?.displayName;
+        print("現在のユーザーは \(username!)です")
         
         //ユーザーのIDがあればそのまま、なければ更新
         guard let userID = Auth.auth().currentUser?.uid else { return }
     
         self.ref.child("Users/\(userID)").observe(.value) { (snapShot) -> Void in
             print("どうかな")
-            let data = snapShot.value!
+//            let data = snapShot.value!
             //snapShot.hasChild : 存在確認
             print("登録されてる？ -> \(snapShot.hasChild("Registered"))")
             
@@ -63,14 +63,14 @@ class SignInViewController: UIViewController {
             else{
                 //登録されてない
                 let plans = ["1" : "Plan1"] as [String : Any]
-                self.ref.child("Users").child("\(userID)").setValue(["Registered" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username, "MyPlans" : plans])
+                self.ref.child("Users").child("\(userID)").setValue(["Registered" : "Yes","Comment": "未登録", "ID" : "未登録", "UserName" : username as Any, "MyPlans" : plans])
                 //mypageへセグエ → あとで！
                 self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
             }
         }
         
         //謎
-        let userRef = self.db.collection("Users")
+        _ = self.db.collection("Users")
         self.handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
         if user != nil {
           MeasurementHelper.sendLoginEvent()
