@@ -270,15 +270,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="z8G-hE-RwY">
-                                <rect key="frame" x="244" y="404" width="150" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="4OQ-Vo-RUK"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="changetime:" destination="p9n-DY-jBu" eventType="valueChanged" id="cIL-Ei-cCj"/>
-                                </connections>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="場所/行動" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YN-u8-Lpm">
                                 <rect key="frame" x="20" y="514" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.27597227689999998" green="0.78340226410000002" blue="0.78567057849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -302,6 +293,9 @@
                                     <action selector="add_button:" destination="p9n-DY-jBu" eventType="touchUpInside" id="Rnq-bi-EJb"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Zq-qfF">
+                                <rect key="frame" x="244" y="404" width="150" height="80"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="25E-F1-6Gs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -317,14 +311,14 @@
                             <constraint firstItem="ics-En-QaQ" firstAttribute="top" secondItem="fXJ-yK-deu" secondAttribute="bottom" constant="20" id="Mu3-WO-vGC"/>
                             <constraint firstItem="ph1-by-k7v" firstAttribute="leading" secondItem="3YN-u8-Lpm" secondAttribute="leading" id="N1J-8Z-0KN"/>
                             <constraint firstItem="5md-nG-NXe" firstAttribute="leading" secondItem="LEr-lf-5Mc" secondAttribute="leading" id="Oqc-kS-Etm"/>
-                            <constraint firstItem="z8G-hE-RwY" firstAttribute="top" secondItem="Bb1-iK-D7J" secondAttribute="bottom" constant="10" id="PeJ-ju-XKR"/>
-                            <constraint firstItem="z8G-hE-RwY" firstAttribute="trailing" secondItem="Bb1-iK-D7J" secondAttribute="trailing" id="R0A-gn-R5h"/>
                             <constraint firstItem="3YN-u8-Lpm" firstAttribute="top" secondItem="5md-nG-NXe" secondAttribute="bottom" constant="30" id="T5Y-TT-HY0"/>
                             <constraint firstItem="5md-nG-NXe" firstAttribute="top" secondItem="LEr-lf-5Mc" secondAttribute="bottom" constant="10" id="VrB-cG-Vka"/>
                             <constraint firstItem="25E-F1-6Gs" firstAttribute="trailing" secondItem="so4-ra-O8D" secondAttribute="trailing" constant="20" id="ZNf-Fa-pBM"/>
+                            <constraint firstItem="Ny9-Zq-qfF" firstAttribute="trailing" secondItem="Bb1-iK-D7J" secondAttribute="trailing" id="dDO-YY-BEa"/>
                             <constraint firstItem="Bb1-iK-D7J" firstAttribute="trailing" secondItem="6jR-Xr-PQP" secondAttribute="trailing" id="dN4-5B-eze"/>
                             <constraint firstItem="fXJ-yK-deu" firstAttribute="top" secondItem="so4-ra-O8D" secondAttribute="bottom" constant="10" id="eyk-jh-tx1"/>
                             <constraint firstItem="so4-ra-O8D" firstAttribute="leading" secondItem="25E-F1-6Gs" secondAttribute="leading" constant="20" id="fiA-7y-0SH"/>
+                            <constraint firstItem="Ny9-Zq-qfF" firstAttribute="bottom" secondItem="5md-nG-NXe" secondAttribute="bottom" id="gGG-a2-h9D"/>
                             <constraint firstItem="3YN-u8-Lpm" firstAttribute="leading" secondItem="25E-F1-6Gs" secondAttribute="leading" constant="20" id="gJW-YO-Wca"/>
                             <constraint firstItem="ph1-by-k7v" firstAttribute="top" secondItem="3YN-u8-Lpm" secondAttribute="bottom" constant="10" id="iak-ok-bzo"/>
                             <constraint firstItem="LEr-lf-5Mc" firstAttribute="top" secondItem="6jR-Xr-PQP" secondAttribute="bottom" constant="30" id="jmK-Q8-HA3"/>
@@ -334,8 +328,9 @@
                             <constraint firstItem="fXJ-yK-deu" firstAttribute="leading" secondItem="so4-ra-O8D" secondAttribute="leading" id="rCY-3f-uLt"/>
                             <constraint firstItem="LEr-lf-5Mc" firstAttribute="leading" secondItem="ics-En-QaQ" secondAttribute="leading" id="rLX-Db-yby"/>
                             <constraint firstItem="Bb1-iK-D7J" firstAttribute="top" secondItem="LEr-lf-5Mc" secondAttribute="top" id="rMg-ly-rgj"/>
+                            <constraint firstItem="Ny9-Zq-qfF" firstAttribute="top" secondItem="5md-nG-NXe" secondAttribute="top" id="tmi-I9-3as"/>
                             <constraint firstItem="fXJ-yK-deu" firstAttribute="trailing" secondItem="so4-ra-O8D" secondAttribute="trailing" id="yUS-2A-q37"/>
-                            <constraint firstItem="z8G-hE-RwY" firstAttribute="leading" secondItem="Bb1-iK-D7J" secondAttribute="leading" id="z4S-MZ-Cut"/>
+                            <constraint firstItem="Bb1-iK-D7J" firstAttribute="leading" secondItem="Ny9-Zq-qfF" secondAttribute="leading" id="z3M-6E-oCo"/>
                         </constraints>
                     </view>
                     <connections>
