@@ -34,6 +34,8 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     @IBOutlet weak var about: UITextView!
     //@IBOutlet weak var about: PlaceHolderTextView!
     @IBOutlet weak var schedule: UITextField!
+    @IBOutlet weak var con: UIButton!
+    
     
     
 

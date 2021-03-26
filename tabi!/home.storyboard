@@ -108,7 +108,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="google.png" width="18" height="18"/>
+        <image name="google.png" width="128" height="128"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
