@@ -20,6 +20,7 @@ class recruit_confirm : UIViewController{
     @IBOutlet weak var destination_label: UILabel!
     @IBOutlet weak var about_label: UILabel!
     @IBOutlet weak var schedule_label: UILabel!
+    @IBOutlet weak var sendButton: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
