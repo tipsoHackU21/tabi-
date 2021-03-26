@@ -93,16 +93,26 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print("猫です")
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailSegue" {
+        print(segue.identifier!)
+        if segue.identifier == "showdetailsegue" {
             if let indexPath = myTableView.indexPathForSelectedRow {
                 guard let destination = segue.destination as? home2 else {
                     fatalError("Failed to prepare DetailViewController.")
                 }
                 print(indexPath.row)
                 //destination.animal = animals[indexPath.row]
+                let defaults = UserDefaults.standard
+                defaults.setValue(indexPath.row, forKey: "row_num")
+                
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            if let indexPath = myTableView.indexPathForSelectedRow{
+                myTableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
 
 }
 
