@@ -80,14 +80,16 @@ class account: UIViewController,MKMapViewDelegate {
         let pinView = MKPinAnnotationView()
 
         pinView.canShowCallout = true
+        let zero:CLLocationDegrees = 0
 
+        
 
         pinView.animatesDrop = true
         pinView.isDraggable = true
         pinView.pinTintColor = UIColor.blue
         //button_array.append(UIButton(type: .detailDisclosure))
         let button = UIButton(type: .detailDisclosure)
-        button.setTitle(annotationlist[i].title, for: .normal)
+        //button.setTitle(annotationlist[i].title, for: .normal)
         i=i+1
         button.addTarget(self, action: #selector(buttonEvent(_:)),for:UIControl.Event.touchUpInside)
         //self.navigationItem.rightBarButtonItem = button
@@ -138,6 +140,20 @@ class account: UIViewController,MKMapViewDelegate {
 //
 //        }
         
+        
+
+        var j=0
+        while(j<button_array.count){
+            print("ボタン"+String(j)+":"+button_array[j].currentTitle!)
+            j=j+1
+        }
+        
+        j=0
+        
+        while(j<annotationlist.count){
+            print("アノテーション"+String(j)+":"+annotationlist[j].title!)
+            j=j+1
+        }
             
             
             
@@ -211,7 +227,7 @@ class account: UIViewController,MKMapViewDelegate {
             print("ピン何個？\(self!.annotationlist.count)")
             //print("ボタン何個？\(self?.button_array.count)")
 
-            //kThread.sleep(forTimeInterval: 0.5)
+            Thread.sleep(forTimeInterval: 0.3)
             
         })
     }
