@@ -46,8 +46,9 @@
                                     <action selector="appear:" destination="IwX-AB-H37" eventType="touchUpInside" id="ZEE-gR-OyJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-CV-yQX">
-                                <rect key="frame" x="294" y="653" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gc7-CV-yQX">
+                                <rect key="frame" x="169" y="647" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95923739669999997" green="0.6572608352" blue="0.193002075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="plus.circle" catalog="system"/>
@@ -66,9 +67,7 @@
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UQF-ki-ob3" firstAttribute="leading" secondItem="Ksf-9M-2ad" secondAttribute="leading" id="428-xN-aGo"/>
-                            <constraint firstItem="gc7-CV-yQX" firstAttribute="centerY" secondItem="xrP-aT-z0c" secondAttribute="centerY" id="DFM-Km-oEr"/>
                             <constraint firstItem="UQF-ki-ob3" firstAttribute="top" secondItem="xrP-aT-z0c" secondAttribute="top" id="OFT-8U-Kdd"/>
-                            <constraint firstItem="gc7-CV-yQX" firstAttribute="centerX" secondItem="xrP-aT-z0c" secondAttribute="centerX" id="R2a-sQ-SzW"/>
                             <constraint firstItem="UQF-ki-ob3" firstAttribute="trailing" secondItem="Ksf-9M-2ad" secondAttribute="trailing" id="lfS-XO-ZZo"/>
                         </constraints>
                     </view>
@@ -257,9 +256,11 @@
                     <navigationItem key="navigationItem" title="募集プラン！" id="7GQ-RI-aiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="about" destination="5lC-LX-upd" id="Agt-4N-DoM"/>
                         <outlet property="button" destination="fkU-QH-3Eq" id="9Ya-22-R2J"/>
-                        <outlet property="con" destination="fkU-QH-3Eq" id="pIP-Z7-OkC"/>
+                        <outlet property="con" destination="fkU-QH-3Eq" id="MzJ-DU-kya"/>
                         <outlet property="night" destination="YUU-fP-GSR" id="540-d8-tc7"/>
+                        <outlet property="schedule" destination="YUU-fP-GSR" id="UbY-Y4-oZU"/>
                         <outlet property="titletextfield" destination="U3G-RN-V0t" id="gUI-Pi-5a4"/>
                         <outlet property="where" destination="cdO-Ng-e5M" id="dxm-ZA-ZwL"/>
                     </connections>
