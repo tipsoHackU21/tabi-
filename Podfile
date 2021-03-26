@@ -41,6 +41,7 @@ target 'tabi!' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'SwiftyJSON'
+  pod 'Firebase/Storage'
   
 #  pod 'GoogleSignIn', '~> 5.0'
 
