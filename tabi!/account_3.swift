@@ -189,7 +189,7 @@ class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UI
     /* UITableViewDelegateデリゲートメソッド */
     // 行がタップされると実行される
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let title = sectionTitle[indexPath.section]
+        let title = sectiontitle[indexPath.section]
         let sectionData = tableData3[indexPath.section]
         let cellData = sectionData[indexPath.row]
         print("\(title)\(cellData.1)")

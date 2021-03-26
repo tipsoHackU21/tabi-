@@ -18,7 +18,7 @@ let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","
 
 //let tableData2 = [section0, section1, section2]
 
-var tableData3 = [[("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科"),("あ", "い")]]
+var tableData4 = [[("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科"),("あ", "い")]]
 
 
 class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -35,17 +35,17 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let sectionTitle = ["作成中のプラン"]
     var section0 = [("キタテハ","タテハチョウ科")]
     
-    let my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:314,height:532), style: .grouped)
+    let my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:414,height:542), style: .grouped)
     
     
 //    @IBOutlet weak var my_suggestTableView: UITableView!
     
-//    var my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:314,height:532), style: .grouped)
+//    var my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:414,height:542), style: .grouped)
     
     @IBAction func appear(_ sender: Any) {
 //        self.tableView.reloadData()
         // データの更新
-        tableData3 = [section0]
+        tableData4 = [section0]
 
 
         // テーブルビューのデリゲートを設定する
@@ -58,11 +58,11 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // テーブルビューを表示する
             view.addSubview(my_suggestTableView)
             my_suggestTableView.isHidden = !my_suggestTableView.isHidden
-            print("\(tableData3)ああ")
+            print("\(tableData4)ああ")
             
         }else{
             print("猫です")
-            print("\(tableData3)")
+            print("\(tableData4)")
             //tap = false
             my_suggestTableView.isHidden = !my_suggestTableView.isHidden
         }
@@ -75,9 +75,9 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ref = Database.database().reference()
         guard (Auth.auth().currentUser?.uid) != nil else { return }
         //プラン一覧を表示したい
-        tableData3 = [section0]
+        tableData4 = [section0]
         configureDatabase()
-        tableData3 = [section0]
+        tableData4 = [section0]
     }
     
 
@@ -121,7 +121,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // セクションごとの行数を決める
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            let sectionData = tableData3[section]
+            let sectionData = tableData4[section]
             print("\(sectionData.count)ああああああああ")
             return sectionData.count
             print("行数\(messages.count)")
@@ -138,7 +138,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        let cell = self.my_suggestTableView .dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         _ = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-            let sectionData = tableData3[(indexPath as NSIndexPath).section]
+            let sectionData = tableData4[(indexPath as NSIndexPath).section]
     //        let sectionData = "セクション"
             let cellData = sectionData[(indexPath as NSIndexPath).row]
             
@@ -152,7 +152,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // 行がタップされると実行される
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let title = sectionTitle[indexPath.section]
-        let sectionData = tableData3[indexPath.section]
+        let sectionData = tableData4[indexPath.section]
         let cellData = sectionData[indexPath.row]
 //        let cellData = messages[indexPath.row]
         print("\(title)\(cellData.1)")
