@@ -7,12 +7,17 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     @IBOutlet weak var date: UIPickerView!
     @IBOutlet weak var time: UIDatePicker!
+//    @IBOutlet weak var end_time: UIDatePicker!
+    
     let compos = [["1日目","2日目"]]
     var plan_array:[[String]] = []
+    var ref: DatabaseReference!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return compos.count
@@ -61,6 +66,35 @@ class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UI
         return false // 改行は入力しない
     }
     @IBAction func add_button(_ sender: Any) {
-//        plan_array.append([,"a"])
+        let com = title_textfield.text!
+        let defaults = UserDefaults.standard
+        let date = defaults.string(forKey: "date")
+        let start_time = defaults.string(forKey: "plan_time")!
+        self.setData(_Comment : com, _Places : "場所", _Pref : "都道府県", _Speci : "行きたい場所", _lat : 2.3, _long : 3.4, _start_time : start_time, _end_time : "3:00", _action : "行動", _day : date!)
     }
+    
+    //suggestPlanを作る
+    //Comment,Places,Schedule,isSelected,maker
+    func setData(_Comment : String, _Places : String, _Pref : String, _Speci : String, _lat : Double, _long : Double, _start_time : String, _end_time : String, _action : String, _day : String){
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        //keyを生成
+        guard let key = self.ref.child("suggestPlans").childByAutoId().key else { return }
+        //Comment,Places,Schedule,isSelected,makerを追加
+        let places = ["Prefecture" : "都道府県",
+                      "Specific" : "場所名",
+                      "latitude" : "緯度",
+                      "longitude" : "経度"]
+        let schedules = ["start_time": _start_time,
+                         "end_time": "終了時間",
+                         "action": "行動",
+                         "place": _Places,
+                         "day": "何日目"]
+        self.ref.child("/suggestPlans/\(key)").setValue(["Comment" : _Comment,
+                                                         "Places" : places,
+                                                         "Schedule" : schedules,
+                                                         "isSelected" : 0,
+                                                         "maker" : userID])
+    }
+    
 }
