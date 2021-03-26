@@ -114,7 +114,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         
         guard (Auth.auth().currentUser?.uid) != nil else { return }
 
-        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long, "Plantheme" : _Plantheme])
+        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long, "Plantheme" : _Plantheme, "PlanID" : "\(_PlanID)"])
 //        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
     }
     
@@ -124,8 +124,11 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         ref = Database.database().reference()
         guard let userID = Auth.auth().currentUser?.uid else { return }
 
-        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long, "Plantheme" : _Plantheme])
-//        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
+//        self.ref.child("/Users/\(userID)/MyPlans/").setValue(["\(_Plantheme)" :"\(_PlanID)"])
+////        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
+        let plan_user_data = "\(_Plantheme)" 
+        let childUpdates_user_plan = ["/Users/\(userID)/MyPlans/\(_PlanID)" : plan_user_data]
+        ref.updateChildValues(childUpdates_user_plan)
         
         
         let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし"] as [String : Any]
