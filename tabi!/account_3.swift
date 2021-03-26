@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 var sectiontitle:[String] = ["1日目","2日目"]//"チョウ目", "バッタ目", "コウチュウ目"]
-var section_0:[(String,String)] = [("a","i")]
+var section_0:[(String,String)] = []
 var section_1:[(String,String)] = [] //[("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
 var section_2:[(String,String)] = [] //[("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
 var tableData3:[[(String,String)]] = [section_0, section_1, section_2]
@@ -108,7 +108,14 @@ class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UI
         let action = defaults.string(forKey: "action")
         self.setData(_Comment : com, _Places : "場所", _Pref : "都道府県", _Speci : "行きたい場所", _lat : 2.3, _long : 3.4, _start_time : start_time!, _end_time : end_time!, _action : "行動", _day : date!)
         let tmp_str = start_time!+"-"+end_time!//+" "+action!
-        section_0.append((tmp_str,action!))
+        
+        print(date!)
+        
+            if(date! == "1日目"){
+                section_0.append((tmp_str,action!))
+            }else{
+                section_1.append((tmp_str,action!))
+            }
 //        self.plan_table.beginUpdates()
 //        self.plan_table.insertRows(at: [IndexPath(row: 0, section: 0)],
 //                                  with: .automatic)
