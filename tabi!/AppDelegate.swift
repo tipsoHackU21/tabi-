@@ -62,8 +62,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     FirebaseApp.configure()
     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     GIDSignIn.sharedInstance().delegate = self
+    // -----＊＊追記部分＊＊----- //
+    changeNavigationBarColor()
+    // -----＊＊追記部分＊＊----- //
     return true
   }
+    
+    // -----＊＊追記部分＊＊----- //
+       func changeNavigationBarColor() {
+           // 全てのNavigation Barの色を変更する
+           // Navigation Bar の背景色の変更
+           UINavigationBar.appearance().barTintColor = AppColors.primary
+           // Navigation Bar の文字色の変更
+           UINavigationBar.appearance().tintColor = AppColors.secondary
+           // Navigation Bar のタイトルの文字色の変更
+           UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppColors.background]
+       }
+       // -----＊＊追記部分＊＊----- //
     
     
     
