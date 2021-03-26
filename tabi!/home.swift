@@ -13,7 +13,7 @@ import Firebase
 //let sectionTitle = ["チョウ目", "バッタ目", "コウチュウ目"]
 //let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
 let section1 = [("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
-let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
+let section2 = [(" "," ")]
 
 
 //let tableData2 = [section0, section1, section2]
@@ -32,8 +32,9 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var messages: [DataSnapshot] = []
     
     // テーブルビューに表示するデータ
-    let sectionTitle = ["作成中のプラン"]
+    var sectionTitle = ["作成中のプラン", "ああああ"]
     var section0 = [("キタテハ","タテハチョウ科")]
+    var dic0 = [["" : "" ]]
     
     let my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:414,height:542), style: .grouped)
     
@@ -45,9 +46,22 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func appear(_ sender: Any) {
 //        self.tableView.reloadData()
         // データの更新
-        tableData4 = [section0]
-
-
+        tableData4 = [section0,section1]
+        print("あああ\(dic0)")
+        
+        //section0に追加
+        var count = dic0[0].count
+        var i = 0
+        for (key, value) in dic0[0] {
+            print("\(key) -> \(value)")
+            section0.append((key, value))
+            let defaults = UserDefaults.standard
+            defaults.setValue("\(value)", forKey: "")
+        }
+        
+        tableData4 = [section0,section1]
+        
+        
         // テーブルビューのデリゲートを設定する
             my_suggestTableView.delegate = self
         // テーブルビューのデータソースを設定する
@@ -85,21 +99,31 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //データベース確認
     func configureDatabase() {
         ref = Database.database().reference()
+        self.sectionTitle = []
         guard let userID = Auth.auth().currentUser?.uid else { return }
     // Listen for new messages in the Firebase database
-        _refHandle = self.ref.child("Users/\(userID)/MyPlans").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+        dic0 = []
+        _refHandle = self.ref.child("giftPlans/UserID").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
                 guard let strongSelf = self else { return }
             // プランをsection0に追加する
             self!.section0 = []
             strongSelf.messages.append(snapshot)
-            print("個数 : \(strongSelf.messages.count)")
+            print("ミズキチ\(type(of: snapshot))")
+            print("キー\(snapshot.key)")
+            print("キー\(snapshot.childrenCount)")
+            print("値\(snapshot.value!)")
+            
+            self!.sectionTitle.append("\(snapshot.key)")
             var count = 0
-            while count < strongSelf.messages.count {
-                print("どうですかね")
-                guard let x = strongSelf.messages[count].value as? String else { return }
-                self!.section0.append((x, "プラン"))
+            let max = strongSelf.messages.count
+            while count < max {
+                guard let x = strongSelf.messages[count].value as? [String:String] else { return }
+                print("なん\(x)")
+                self!.dic0.append(x)
+                print("あああ\(type(of : strongSelf.messages[count].value!))")
                 count += 1
             }
+//            self!.section0.append(("\(x)", "プラン"))
             print("どうですかああ\(self!.section0)")
             print("どうですかああ\(type(of : self!.section0))")
             
