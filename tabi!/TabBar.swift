@@ -8,17 +8,17 @@
 import Foundation
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // 選択時アイコンの色
-        UITabBar.appearance().tintColor = AppColor.secondary
+        UITabBar.appearance().tintColor = AppColors.secondary
         // 非選択時アイコンの色
-        UITabBar.appearance().unselectedItemTintColor = AppColor.background
+        UITabBar.appearance().unselectedItemTintColor = AppColors.background
         // 背景色
-        UITabBar.appearance().barTintColor = AppColor.primary
+        UITabBar.appearance().barTintColor = AppColors.primary
     }
 
 }

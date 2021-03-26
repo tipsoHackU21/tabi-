@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AppColor {
+class AppColors {
     // 濃い緑を返す
     class var primary: UIColor {
         return rgbColor(rgbValue: 0x0EA9AF)
