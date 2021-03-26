@@ -9,7 +9,7 @@ class mypage: UIViewController {
 
     @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var UserIcon: UIImageView!
-    @IBOutlet weak var EditButton: UIButton!
+    @IBOutlet weak var ProfileEditButton: UIButton!
     @IBOutlet weak var MyPage: UINavigationBar!
     fileprivate var _refHandle: DatabaseHandle!
     
