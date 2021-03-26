@@ -91,8 +91,8 @@ class account: UIViewController,MKMapViewDelegate {
         let pinView = MKPinAnnotationView()
         pinView.canShowCallout = true
         
-        pinView.animatesDrop = true
-        pinView.isDraggable = true
+        //pinView.animatesDrop = true
+        //pinView.isDraggable = true
         pinView.pinTintColor = UIColor.blue
         let button = UIButton(type: .detailDisclosure)
         button.addTarget(self, action: #selector(buttonEvent(_:)),for:UIControl.Event.touchUpInside)
