@@ -14,14 +14,30 @@ let sectionTitle = ["チョウ目", "バッタ目", "コウチュウ目"]
 let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
 let section1 = [("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
 let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
-let tableData2 = [section0, section1, section2]
+var tableData2 = [section0, section1, section2]
 
 class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    //データベース
+    var ref: DatabaseReference!
+    var userName = Auth.auth().currentUser?.displayName
+    fileprivate var _refHandle: DatabaseHandle!
+    var messages: [DataSnapshot] = []
+    
+    // テーブルビューに表示するデータ
+    let sectionTitle = ["作成中のプラン"]
+    var section0 = [("キタテハ","タテハチョウ科")]
+    
     
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // データの更新
+        tableData2 = [section0]
+        configureDatabase()
+        tableData2 = [section0]
         
 //        // テーブルビューを作る
 //        let myTableView:UITableView!
@@ -33,6 +49,37 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // テーブルビューを表示する
         view.addSubview(myTableView)
     }
+    
+    
+    
+    //データベース確認
+    func configureDatabase() {
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+    // Listen for new messages in the Firebase database
+        _refHandle = self.ref.child("Users/\(userID)/MyPlans").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+                guard let strongSelf = self else { return }
+            // プランをsection0に追加する
+            self!.section0 = []
+            strongSelf.messages.append(snapshot)
+            print("個数 : \(strongSelf.messages.count)")
+            var count = 0
+            while count < strongSelf.messages.count {
+                print("どうですかね")
+                guard let x = strongSelf.messages[count].value as? String else { return }
+                self!.section0.append((x, "プラン"))
+                count += 1
+            }
+            print("どうですかああ\(self!.section0)")
+            print("どうですかああ\(type(of : self!.section0))")
+            
+            
+        })
+        print("表示してくれええええええ\(self.messages)")
+        
+  }
+    
+    
     
     /*　UITableViewDataSourceプロトコル */
     // セクションの個数を決める
