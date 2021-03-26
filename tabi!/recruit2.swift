@@ -24,6 +24,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     var longitude : Float = 0.0
     var ref: DatabaseReference!
     @IBOutlet weak var `where`: UILabel!
+    @IBOutlet weak var night: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

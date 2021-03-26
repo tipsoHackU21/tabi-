@@ -185,6 +185,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YUU-fP-GSR">
+                                <rect key="frame" x="20" y="528" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WfI-dy-7Xu"/>
+                                    <constraint firstAttribute="width" constant="40" id="mPP-Kv-gFN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAm-rc-HY5">
+                                <rect key="frame" x="70" y="528" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="hVc-ZI-xWj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zsL-lZ-xSG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,17 +214,22 @@
                             <constraint firstItem="bHz-Io-bNi" firstAttribute="top" secondItem="zsL-lZ-xSG" secondAttribute="top" constant="20" id="Fa1-oi-eRG"/>
                             <constraint firstItem="XV4-vu-9tM" firstAttribute="top" secondItem="LnD-uw-KqK" secondAttribute="top" id="OrG-8u-5Au"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="bottom" secondItem="fkU-QH-3Eq" secondAttribute="bottom" constant="150" id="Qi2-7m-7g7"/>
+                            <constraint firstItem="YUU-fP-GSR" firstAttribute="leading" secondItem="zsL-lZ-xSG" secondAttribute="leading" constant="20" id="RyB-Wz-hUY"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="R7g-uM-ipJ" secondAttribute="trailing" constant="10" id="T5g-8z-2zx"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="U3G-RN-V0t" secondAttribute="trailing" constant="20" id="XHZ-4h-iCD"/>
+                            <constraint firstItem="YUU-fP-GSR" firstAttribute="top" secondItem="XmB-Er-XTG" secondAttribute="bottom" constant="10" id="a29-pt-Vse"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="cdO-Ng-e5M" secondAttribute="trailing" constant="10" id="cWx-Z0-rJH"/>
                             <constraint firstItem="LnD-uw-KqK" firstAttribute="top" secondItem="U3G-RN-V0t" secondAttribute="bottom" constant="15" id="ckr-dL-Rah"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="XV4-vu-9tM" secondAttribute="trailing" constant="10" id="d1a-uF-cxo"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="XmB-Er-XTG" secondAttribute="trailing" constant="10" id="e2u-vF-Dgf"/>
+                            <constraint firstItem="VAm-rc-HY5" firstAttribute="leading" secondItem="YUU-fP-GSR" secondAttribute="trailing" constant="10" id="eCe-kJ-V0Y"/>
+                            <constraint firstItem="VAm-rc-HY5" firstAttribute="top" secondItem="YUU-fP-GSR" secondAttribute="top" id="ewe-GU-aAd"/>
                             <constraint firstItem="5lC-LX-upd" firstAttribute="leading" secondItem="bHz-Io-bNi" secondAttribute="leading" id="glV-Cz-gOR"/>
                             <constraint firstItem="XmB-Er-XTG" firstAttribute="top" secondItem="5lC-LX-upd" secondAttribute="bottom" constant="20" id="hoZ-v7-dwM"/>
                             <constraint firstItem="R7g-uM-ipJ" firstAttribute="top" secondItem="cdO-Ng-e5M" secondAttribute="bottom" constant="20" id="iJR-8x-fvo"/>
                             <constraint firstItem="zsL-lZ-xSG" firstAttribute="trailing" secondItem="5lC-LX-upd" secondAttribute="trailing" constant="20" id="iky-lb-13x"/>
                             <constraint firstItem="5lC-LX-upd" firstAttribute="top" secondItem="R7g-uM-ipJ" secondAttribute="bottom" constant="20" id="lEn-qj-igM"/>
+                            <constraint firstItem="VAm-rc-HY5" firstAttribute="bottom" secondItem="YUU-fP-GSR" secondAttribute="bottom" id="nTC-8y-DI9"/>
                             <constraint firstItem="XmB-Er-XTG" firstAttribute="leading" secondItem="bHz-Io-bNi" secondAttribute="leading" id="nri-XS-6Lp"/>
                             <constraint firstItem="XV4-vu-9tM" firstAttribute="leading" secondItem="LnD-uw-KqK" secondAttribute="trailing" constant="10" id="ovK-aC-u2h"/>
                             <constraint firstItem="bHz-Io-bNi" firstAttribute="leading" secondItem="zsL-lZ-xSG" secondAttribute="leading" constant="20" id="q4c-kQ-Fbj"/>
@@ -219,6 +242,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="con" destination="fkU-QH-3Eq" id="pIP-Z7-OkC"/>
+                        <outlet property="night" destination="YUU-fP-GSR" id="540-d8-tc7"/>
                         <outlet property="titletextfield" destination="U3G-RN-V0t" id="gUI-Pi-5a4"/>
                         <outlet property="where" destination="cdO-Ng-e5M" id="dxm-ZA-ZwL"/>
                     </connections>
