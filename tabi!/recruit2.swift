@@ -25,13 +25,14 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     var ref: DatabaseReference!
     @IBOutlet weak var `where`: UILabel!
     @IBOutlet weak var night: UITextField!
+    @IBOutlet weak var con: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titletextfield.delegate = self
         input_title = false
         defaults.set(false, forKey: "isDecidePlace")
-  
+        con.layer.cornerRadius = 10.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +50,6 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     
     var input_title = false
-
-    @IBOutlet weak var con: UIButton!
    
     
     

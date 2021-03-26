@@ -19,10 +19,14 @@ class recruit_map: UIViewController,MKMapViewDelegate {
     @IBOutlet weak var address_field: UILabel!
     
     var annotationlist = Array<MKPointAnnotation>()
+    
+    @IBOutlet weak var con: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         japan_map.delegate = self
+        con.layer.cornerRadius = 10.0
         
     }
 
@@ -158,6 +162,7 @@ class recruit_map: UIViewController,MKMapViewDelegate {
         self.ref.child("/Plans/Plan1/Places/longitude").setValue(_long)
         
     }
+    
     
     @IBAction func Decide(_ sender: Any) {
         //recruit2に座標を伝える
