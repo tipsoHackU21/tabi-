@@ -14,6 +14,8 @@ import Firebase
 //let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
 let section1 = [("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
 let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
+
+
 //let tableData2 = [section0, section1, section2]
 
 var tableData3 = [[("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科"),("あ", "い")]]
@@ -44,6 +46,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        self.tableView.reloadData()
         // データの更新
         tableData3 = [section0]
+
 
         // テーブルビューのデリゲートを設定する
             my_suggestTableView.delegate = self
@@ -77,6 +80,8 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableData3 = [section0]
     }
     
+
+
     //データベース確認
     func configureDatabase() {
         ref = Database.database().reference()
@@ -105,6 +110,8 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
     
     
+
+
     /*　UITableViewDataSourceプロトコル */
     // セクションの個数を決める
     func numberOfSections(in tableView: UITableView) -> Int {
