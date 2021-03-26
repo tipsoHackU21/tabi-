@@ -5,8 +5,9 @@ class account_2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
-        print("どうかな\(defaults.string(forKey: "last_latitude"))")
-        print("どうかな\(defaults.string(forKey: "last_longtitude"))")
+        print("どうかな\(defaults.string(forKey: "last_latitude")!)")
+        print("どうかな\(defaults.string(forKey: "last_longtitude")!)")
+        print("どうかな\(defaults.string(forKey: "suggestPlanID")!)")
         
     }
     
