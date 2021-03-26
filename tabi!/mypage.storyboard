@@ -15,10 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jko-49-DjM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
+                        <color key="tintColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="jgI-dM-rI8" kind="relationship" relationship="rootViewController" id="gTg-7H-UgJ"/>

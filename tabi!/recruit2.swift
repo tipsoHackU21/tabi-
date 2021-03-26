@@ -49,7 +49,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
 
         schedule.tag = 1
         titletextfield.tag = 0
-        
+        con.layer.cornerRadius = 10
   
 
     }
