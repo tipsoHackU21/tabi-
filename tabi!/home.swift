@@ -10,13 +10,20 @@ import Firebase
 
 
 // テーブルビューに表示するデータ
-let sectionTitle = ["チョウ目", "バッタ目", "コウチュウ目"]
-let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
+//let sectionTitle = ["チョウ目", "バッタ目", "コウチュウ目"]
+//let section0 = [("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科")]
 let section1 = [("キリギリス","キリギリス科"),("ヒナバッタ","バッタ科"),("マツムシ","マツムシ科")]
 let section2 = [("ハンミョウ","ハンミョウ科"),("アオオサムシ","オサムシ科"),("チビクワガタ","クワガタムシ科")]
-var tableData2 = [section0, section1, section2]
+
+
+//let tableData2 = [section0, section1, section2]
+
+var tableData3 = [[("キタテハ","タテハチョウ科"),("クロアゲハ","アゲハチョウ科"),("あ", "い")]]
+
 
 class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+   
     
     //データベース
     var ref: DatabaseReference!
@@ -28,30 +35,53 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let sectionTitle = ["作成中のプラン"]
     var section0 = [("キタテハ","タテハチョウ科")]
     
+    let my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:314,height:532), style: .grouped)
     
-    @IBOutlet weak var myTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+//    @IBOutlet weak var my_suggestTableView: UITableView!
+    
+//    var my_suggestTableView = UITableView(frame: CGRect(x:50,y:280,width:314,height:532), style: .grouped)
+    
+    @IBAction func appear(_ sender: Any) {
+//        self.tableView.reloadData()
         // データの更新
-        tableData2 = [section0]
-        configureDatabase()
-        tableData2 = [section0]
-        
-//        // テーブルビューを作る
-//        let myTableView:UITableView!
-//        myTableView = UITableView(frame: view.frame, style: .grouped)
+        tableData3 = [section0]
+
+
         // テーブルビューのデリゲートを設定する
-        myTableView.delegate = self
+            my_suggestTableView.delegate = self
         // テーブルビューのデータソースを設定する
-        myTableView.dataSource = self
-        // テーブルビューを表示する
-        view.addSubview(myTableView)
+            my_suggestTableView.dataSource = self
+        
+        
+        if(my_suggestTableView.isHidden==false){
+            // テーブルビューを表示する
+            view.addSubview(my_suggestTableView)
+            my_suggestTableView.isHidden = !my_suggestTableView.isHidden
+            print("\(tableData3)ああ")
+            
+        }else{
+            print("猫です")
+            print("\(tableData3)")
+            //tap = false
+            my_suggestTableView.isHidden = !my_suggestTableView.isHidden
+        }
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        super.viewDidLoad()
+        ref = Database.database().reference()
+        guard (Auth.auth().currentUser?.uid) != nil else { return }
+        //プラン一覧を表示したい
+        tableData3 = [section0]
+        configureDatabase()
+        tableData3 = [section0]
+    }
     
+
+
     //データベース確認
     func configureDatabase() {
         ref = Database.database().reference()
@@ -80,7 +110,8 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
     
     
-    
+
+
     /*　UITableViewDataSourceプロトコル */
     // セクションの個数を決める
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,8 +120,12 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // セクションごとの行数を決める
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionData = tableData2[section]
-        return sectionData.count
+        
+            let sectionData = tableData3[section]
+            print("\(sectionData.count)ああああああああ")
+            return sectionData.count
+            print("行数\(messages.count)")
+    //        return messages.count
     }
 
     // セクションのタイトルを決める
@@ -100,66 +135,30 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // セルを作る
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-//        let sectionData = tableData2[(indexPath as NSIndexPath).section]
-//        let cellData = sectionData[(indexPath as NSIndexPath).row]
-//        cell.textLabel?.text = cellData.0
-//        cell.detailTextLabel?.text = cellData.1
-//        return cell
-        
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell {
-//                 return cell
-//             }
-//             return UITableViewCell()
-        guard let cell = myTableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? UITableViewCell else {
-                    fatalError("Dequeue failed: AnimalTableViewCell.")
-                }
-        let sectionData = tableData2[(indexPath as NSIndexPath).section]
-        let cellData = sectionData[(indexPath as NSIndexPath).row]
-        cell.textLabel?.text = cellData.0
-        cell.detailTextLabel?.text = cellData.1
-        return cell
+//        let cell = self.my_suggestTableView .dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        _ = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+            let sectionData = tableData3[(indexPath as NSIndexPath).section]
+    //        let sectionData = "セクション"
+            let cellData = sectionData[(indexPath as NSIndexPath).row]
+            
+            cell.textLabel?.text = cellData.0
+            cell.detailTextLabel?.text = cellData.1
+        print("セルの中身\(cell.textLabel!.text )")
+            return cell
     }
 
     /* UITableViewDelegateデリゲートメソッド */
     // 行がタップされると実行される
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let title = sectionTitle[indexPath.section]
-        let sectionData = tableData2[indexPath.section]
+        let sectionData = tableData3[indexPath.section]
         let cellData = sectionData[indexPath.row]
+//        let cellData = messages[indexPath.row]
         print("\(title)\(cellData.1)")
         print("\(cellData.0)")
-        
-        
-        
-        
-        
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "home2") as! home2
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
-        print("猫です")
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.identifier!)
-        if segue.identifier == "showdetailsegue" {
-            if let indexPath = myTableView.indexPathForSelectedRow {
-                guard let destination = segue.destination as? home2 else {
-                    fatalError("Failed to prepare DetailViewController.")
-                }
-                print(indexPath.row)
-                //destination.animal = animals[indexPath.row]
-                let defaults = UserDefaults.standard
-                defaults.setValue(indexPath.row, forKey: "row_num")
-                
-            }
-        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-            if let indexPath = myTableView.indexPathForSelectedRow{
-                myTableView.deselectRow(at: indexPath, animated: true)
-            }
-        }
 
 }
 
