@@ -19,17 +19,33 @@ import Firebase*/
 
 class recruit2 : UIViewController, UITextFieldDelegate{
     @IBOutlet weak var titletextfield: UITextField!
+    let defaults = UserDefaults.standard
+    var latitude : Float = 0.0
+    var longitude : Float = 0.0
+    var ref: DatabaseReference!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titletextfield.delegate = self
         input_title = false
+        defaults.set(false, forKey: "isDecidePlace")
+  
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if defaults.bool(forKey: "isDecidePlace") {
+            print("latitude : \(defaults.float(forKey: "lat"))")
+            print("longitude : \(defaults.float(forKey: "long"))")
+        }
+        
     }
     
     
     
     var input_title = false
-    var ref: DatabaseReference!
+    
 
     @IBOutlet weak var kanto: UIButton!
     @IBOutlet weak var hokkaido: UIButton!
@@ -94,13 +110,29 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     }
     
     //募集地図を立てるための目的地データベース追加
-    func addDestination(_lat : Double, _long : Double, _PlanID : String) -> Void {
-        ref = Database.database().reference()
+    func addDestination(_lat : Double, _long : Double, _PlanID : String, _Plantheme : String) -> Void {
+        
         guard (Auth.auth().currentUser?.uid) != nil else { return }
 
-        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long])
+        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long, "Plantheme" : _Plantheme])
 //        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
     }
+    
+    //目的地データベース追加
+    func addPlans(_lat : Double, _long : Double, _PlanID : String, _Plantheme : String) -> Void {
+        
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+
+        self.ref.child("/Destinations/\(_PlanID)").setValue(["latitude" : _lat, "longitude" : _long, "Plantheme" : _Plantheme])
+//        self.ref.child("/Destinations/\(_PlanID)").setValue(_long)
+        
+        
+        let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし"] as [String : Any]
+        let childUpdates_plan = ["/Plans/\(_PlanID)/" : plan_data]
+        ref.updateChildValues(childUpdates_plan)
+    }
+    
     
     
     
@@ -132,22 +164,18 @@ class recruit2 : UIViewController, UITextFieldDelegate{
             print("ここに行きたい -> \(type(of: tmp_string))")
             print("テーマ\(titletextfield.text!)")
             
-            //ユーザーのプラン追加
             ref = Database.database().reference()
-            guard let userID = Auth.auth().currentUser?.uid else { return }
             
-            guard let key = ref.child("Plans").childByAutoId().key else { return }
-            let plan_data = ["Plantheme" : "\(titletextfield.text!)", "PlanUser" : userID, "Plannners" : [userID], "Places" : tmp_string, "When" : "なし", "Schedule" : "なし", "Comment" : "なし"] as [String : Any]
-            let childUpdates_plan = ["/Plans/\(key)/" : plan_data]
-            ref.updateChildValues(childUpdates_plan)
+            guard let key = self.ref.child("Plans").childByAutoId().key else { return }
+            
+            self.latitude = Float(defaults.float(forKey: "lat"))
+            self.longitude = Float(defaults.float(forKey: "long"))
+            
+            //ユーザーのプラン追加
+            self.addPlans(_lat : Double(self.latitude), _long : Double(self.longitude), _PlanID : "\(key)", _Plantheme : titletextfield.text!)
+            
             //ユーザーにプラン追加
-            
-            //あとで変える
-            let plan_user = ["\(titletextfield.text!)" : key] as [String : Any]
-            let childUpdates_user = ["/Users/\(userID)/MyPlans/\(key)/" : plan_user]
-            ref.updateChildValues(childUpdates_user)
-            
-            self.addDestination(_lat: 0, _long: 0, _PlanID: "\(key)")
+            self.addDestination(_lat: Double(self.latitude), _long: Double(self.longitude), _PlanID: "\(key)", _Plantheme : titletextfield.text!)
 
         }
     }
