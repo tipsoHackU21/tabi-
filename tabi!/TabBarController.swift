@@ -13,12 +13,12 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // -----＊＊追記部分＊＊----- //
-        // アイコンの色を変更できます！
+        // 選択時アイコンの色
         UITabBar.appearance().tintColor = AppColor.secondary
-        // 背景色を変更できます！
+        // 非選択時アイコンの色
+        UITabBar.appearance().unselectedItemTintColor = AppColor.background
+        // 背景色
         UITabBar.appearance().barTintColor = AppColor.primary
-        // -----＊＊追記部分＊＊----- //
     }
 
 }
