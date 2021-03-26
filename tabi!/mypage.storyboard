@@ -89,6 +89,7 @@
                     <tabBarItem key="tabBarItem" title="MyPage" image="ic_account_circle.png" selectedImage="person.crop.square" catalog="system" id="puN-as-CL6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="EditButton" destination="kUK-vi-um2" id="V3o-cR-9k4"/>
                         <outlet property="MyPage" destination="BA0-gT-M9c" id="KHw-Eb-0b8"/>
                         <outlet property="ProfileEditButton" destination="kUK-vi-um2" id="43t-ea-RyT"/>
                         <outlet property="UserIcon" destination="vWS-rJ-CY8" id="tgy-7r-18X"/>
