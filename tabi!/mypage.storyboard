@@ -167,6 +167,7 @@
                     <connections>
                         <outlet property="message" destination="3l0-8n-YjV" id="KcD-mY-e5k"/>
                         <outlet property="updateButton" destination="bPq-2G-wyH" id="9fF-BC-E7S"/>
+                        <outlet property="usermessage" destination="3l0-8n-YjV" id="IJU-hX-nRj"/>
                         <outlet property="username" destination="Ewm-Wz-viD" id="2cP-sC-9EB"/>
                     </connections>
                 </viewController>
