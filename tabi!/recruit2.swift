@@ -30,11 +30,13 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     var ref: DatabaseReference!
     @IBOutlet weak var `where`: UILabel!
     @IBOutlet weak var night: UITextField!
+
     @IBOutlet weak var about: UITextView!
     //@IBOutlet weak var about: PlaceHolderTextView!
     @IBOutlet weak var schedule: UITextField!
     
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +44,12 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         schedule.delegate = self
         input_title = false
         defaults.set(false, forKey: "isDecidePlace")
+
         schedule.tag = 1
         titletextfield.tag = 0
         
   
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,8 +82,6 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     
     var input_title = false
-
-    @IBOutlet weak var con: UIButton!
    
     
     
