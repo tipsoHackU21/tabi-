@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NVH-Bl-dm6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,28 +8,95 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--home-->
-        <scene sceneID="w3d-Ct-bxH">
+        <!--募集一覧-->
+        <scene sceneID="ZF8-77-fC6">
             <objects>
-                <viewController storyboardIdentifier="home" id="NVH-Bl-dm6" customClass="home" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="geC-VM-zGU">
+                <viewController id="hFK-S3-lfZ" customClass="home" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ac-0H-sdo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="0SH-mD-rjr"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkd-9X-fFV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="IjS-lI-Ibc"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="QK2-pL-kV8">
+                                        <nil key="title"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My募集一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duo-zB-8nU">
+                                <rect key="frame" x="50" y="180" width="314" height="50"/>
+                                <color key="backgroundColor" red="0.27597227689999998" green="0.78340226410000002" blue="0.78567057849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A1k-ck-G0v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xE-dl-QbB">
+                                <rect key="frame" x="327" y="195" width="17" height="22"/>
+                                <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="appear:" destination="hFK-S3-lfZ" eventType="touchUpInside" id="w6z-Ba-iRo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s7W-Or-7fH">
+                                <rect key="frame" x="320" y="143" width="74" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="plus.circle" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c2w-WS-VoW"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Duo-zB-8nU" firstAttribute="leading" secondItem="c2w-WS-VoW" secondAttribute="leading" constant="50" id="1UY-sa-dKs"/>
+                            <constraint firstItem="hkd-9X-fFV" firstAttribute="top" secondItem="8ac-0H-sdo" secondAttribute="top" id="9em-7x-Xea"/>
+                            <constraint firstItem="hkd-9X-fFV" firstAttribute="trailing" secondItem="c2w-WS-VoW" secondAttribute="trailing" id="Fdp-9H-X8U"/>
+                            <constraint firstItem="c2w-WS-VoW" firstAttribute="trailing" secondItem="Duo-zB-8nU" secondAttribute="trailing" constant="50" id="K6F-eN-4AR"/>
+                            <constraint firstItem="Duo-zB-8nU" firstAttribute="top" secondItem="hkd-9X-fFV" secondAttribute="bottom" constant="30" id="T9h-HX-3Lz"/>
+                            <constraint firstItem="7xE-dl-QbB" firstAttribute="top" secondItem="hkd-9X-fFV" secondAttribute="bottom" constant="45" id="TaG-2g-bZE"/>
+                            <constraint firstItem="hkd-9X-fFV" firstAttribute="leading" secondItem="c2w-WS-VoW" secondAttribute="leading" id="hUA-id-sSN"/>
+                            <constraint firstItem="c2w-WS-VoW" firstAttribute="trailing" secondItem="7xE-dl-QbB" secondAttribute="trailing" constant="70" id="yAg-5H-xin"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" image="house.fill" catalog="system" id="Qkn-K1-luC"/>
+                    <navigationItem key="navigationItem" title="募集一覧" id="BDR-fU-YH9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M45-Pi-OQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOI-is-9xC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="94"/>
+            <point key="canvasLocation" x="1831.8840579710147" y="91.741071428571431"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="e8o-0p-LUx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xeS-rF-uAi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="house" catalog="system" id="SV2-xe-hHx"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l6R-1q-St3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hFK-S3-lfZ" kind="relationship" relationship="rootViewController" id="YBc-dU-Jwu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZk-JF-Jff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.73913043478262" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
