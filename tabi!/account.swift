@@ -105,6 +105,7 @@ class account: UIViewController,MKMapViewDelegate {
 
     //    ピンの中のiマークを押したときの処理
     @objc func buttonEvent(_ sender: UIButton) {
+        
             /*let storyboard: UIStoryboard = self.storyboard!
                    // ②遷移先ViewControllerのインスタンス取得
                    let nextView = storyboard.instantiateViewController(withIdentifier: "account_2") as! account_2
