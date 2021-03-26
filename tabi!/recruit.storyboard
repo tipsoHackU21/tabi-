@@ -59,7 +59,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="fzp-n3-H4l" kind="show" id="L3t-uC-750"/>
+                                    <segue destination="fzp-n3-H4l" kind="show" id="Dey-fh-vQP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,7 +257,6 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="about" destination="5lC-LX-upd" id="Agt-4N-DoM"/>
-                        <outlet property="button" destination="fkU-QH-3Eq" id="9Ya-22-R2J"/>
                         <outlet property="con" destination="fkU-QH-3Eq" id="MzJ-DU-kya"/>
                         <outlet property="night" destination="YUU-fP-GSR" id="540-d8-tc7"/>
                         <outlet property="schedule" destination="YUU-fP-GSR" id="UbY-Y4-oZU"/>
