@@ -23,7 +23,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     var latitude : Float = 0.0
     var longitude : Float = 0.0
     var ref: DatabaseReference!
-    
+    @IBOutlet weak var `where`: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,12 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.`where`.text = "お腹"
         if defaults.bool(forKey: "isDecidePlace") {
             print("latitude : \(defaults.float(forKey: "lat"))")
             print("longitude : \(defaults.float(forKey: "long"))")
+            self.`where`.text = defaults.string(forKey: "都道府県")!
+            print("都道府県\(defaults.string(forKey: "都道府県")!)")
         }
         
     }
@@ -45,43 +48,12 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     
     var input_title = false
-    
 
-    @IBOutlet weak var kanto: UIButton!
-    @IBOutlet weak var hokkaido: UIButton!
-    @IBOutlet weak var hokuriku: UIButton!
     @IBOutlet weak var con: UIButton!
    
     
-    @IBAction func hokkaido_press(_ sender: Any) {
-        hokkaido.isSelected = !hokkaido.isSelected
-        if(kanto.isSelected){
-            kanto.isSelected = !kanto.isSelected
-        }
-        if(hokuriku.isSelected){
-            hokuriku.isSelected = !hokuriku.isSelected
-        }
-        
-    }
     
-    @IBAction func kanto_press(_ sender: Any) {
-        kanto.isSelected = !kanto.isSelected
-        if(hokuriku.isSelected){
-            hokuriku.isSelected = !hokuriku.isSelected
-        }
-        if(hokkaido.isSelected){
-            hokkaido.isSelected = !hokkaido.isSelected
-        }
-    }
-    @IBAction func hokuriku_press(_ sender: Any) {
-        hokuriku.isSelected = !hokuriku.isSelected
-        if(hokkaido.isSelected){
-            hokkaido.isSelected = !hokkaido.isSelected
-        }
-        if(kanto.isSelected){
-            kanto.isSelected = !kanto.isSelected
-        }
-    }
+    
     
     /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print(22222)
@@ -144,27 +116,18 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     @IBAction func confirm(_ sender: Any) {
        
-        if((!hokkaido.isSelected && !hokuriku.isSelected && !kanto.isSelected && !input_title) || titletextfield.text!.isEmpty){
+        if titletextfield.text!.isEmpty {
             con.setTitle("すべて入力してください", for: .normal)
         }else{
             con.setTitle("確認", for: .normal)
-            let tmp_string:String;
-            if(hokuriku.isSelected){
-                tmp_string="北陸"
-            }else if(kanto.isSelected){
-                tmp_string="関東"
-            }else{
-                tmp_string = "北海道"
-            }
+
             let defaults = UserDefaults.standard
-            defaults.set(tmp_string,forKey:"destination")
+
             
             let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "confirmpage")
             present(nextVC!, animated: true,completion: nil)
             
             //入力事項をセット
-            print("ここに行きたい -> \(tmp_string)")
-            print("ここに行きたい -> \(type(of: tmp_string))")
             print("テーマ\(titletextfield.text!)")
             
             ref = Database.database().reference()

@@ -13,7 +13,11 @@ class recruit_map: UIViewController,MKMapViewDelegate {
     var button_array:[UIButton] = []
     var latitude : Float = 0.0
     var longitude : Float = 0.0
-
+    var cl : CLGeocoder!
+    var pre : String = "なし"
+    
+    @IBOutlet weak var address_field: UILabel!
+    
     var annotationlist = Array<MKPointAnnotation>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,42 @@ class recruit_map: UIViewController,MKMapViewDelegate {
           // ...
         }
         
+        geocode(_address: "埼玉県ふじみ野市中福岡10-22")
+        
+    }
+    
+    func geocode(_address : String){
+        cl = CLGeocoder()
+//    let address = "埼玉県ふじみ野市中福岡10-22"
+    cl.geocodeAddressString(_address) { placemarks, error in
+        if let lat = placemarks?.first?.location?.coordinate.latitude {
+            print("緯度 : \(lat)")
+        }
+        if let lng = placemarks?.first?.location?.coordinate.longitude {
+            print("経度 : \(lng)")
+        }
+    }
+    }
+    
+    func revgeocode(_lat : Double, _long : Double) -> String{
+        let location = CLLocation(latitude: _lat, longitude: _long)
+        
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first, error == nil else { return }
+            // あとは煮るなり焼くなり
+            let s : String = "なし"
+            print("どこかな\(placemark)")
+            print("どこかな\(placemark.administrativeArea)")
+            print("どこかな\(type(of:placemark.administrativeArea))")
+            if placemark.administrativeArea! != nil{
+                let defaults = UserDefaults.standard
+                defaults.setValue(placemark.administrativeArea!, forKey: "都道府県")
+                self.address_field.text = placemark.administrativeArea!
+//                self.pre = placemark.administrativeArea!
+            }
+            
+        }
+        return self.pre
     }
     
    
@@ -125,6 +165,8 @@ class recruit_map: UIViewController,MKMapViewDelegate {
         defaults.set(true, forKey: "isDecidePlace")
         defaults.set(self.latitude, forKey: "lat")
         defaults.set(self.longitude, forKey: "long")
+        print("都道府県\(self.revgeocode(_lat : Double(self.latitude), _long : Double(self.longitude)))")
+//        defaults.set(self.revgeocode(_lat : Double(self.latitude), _long : Double(self.longitude)), forKey: "都道府県")
     }
     
 }
