@@ -19,6 +19,7 @@ class recruit_confirm : UIViewController{
     @IBOutlet weak var title_label: UILabel!
     @IBOutlet weak var destination_label: UILabel!
     @IBOutlet weak var about_label: UILabel!
+    @IBOutlet weak var schedule_label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
@@ -26,6 +27,7 @@ class recruit_confirm : UIViewController{
 //        print(defaults.string(forKey: "title")!)
         title_label.text=defaults.string(forKey: "title")!
         destination_label.text = defaults.string(forKey:"destination")!
+        schedule_label.text = String(defaults.integer(forKey: "schedule"))
         
     }
 }

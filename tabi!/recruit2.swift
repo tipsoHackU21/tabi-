@@ -9,11 +9,16 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import MapKit
+import SwiftUI
 
 /*import GoogleSignIn
 import FirebaseAuth
 //import FirebaseDatabase
 import Firebase*/
+
+
+
 
 
 
@@ -25,14 +30,26 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     var ref: DatabaseReference!
     @IBOutlet weak var `where`: UILabel!
     @IBOutlet weak var night: UITextField!
-    @IBOutlet weak var con: UIButton!
+
+    @IBOutlet weak var about: UITextView!
+    //@IBOutlet weak var about: PlaceHolderTextView!
+    @IBOutlet weak var schedule: UITextField!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titletextfield.delegate = self
+        schedule.delegate = self
         input_title = false
         defaults.set(false, forKey: "isDecidePlace")
-        con.layer.cornerRadius = 10.0
+
+        schedule.tag = 1
+        titletextfield.tag = 0
+        
+  
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +61,21 @@ class recruit2 : UIViewController, UITextFieldDelegate{
             self.`where`.text = defaults.string(forKey: "都道府県")!
             print("都道府県\(defaults.string(forKey: "都道府県")!)")
         }
+        if(defaults.bool(forKey: "isDecidePlace")){
+            let t = CGRect(origin:CGPoint(x:180,y:250),size:CGSize(width:200,height:70))
+            let japan_map = MKMapView(frame: t)
+            let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(CGFloat(defaults.float(forKey: "lat"))), longitude: CLLocationDegrees(CGFloat(defaults.float(forKey: "long"))))
+            let span = MKCoordinateSpan(latitudeDelta: 4.0, longitudeDelta: 4.0)
+            let region = MKCoordinateRegion(center: center, span: span)
+            japan_map.setRegion(region, animated: true)
+            self.view.addSubview(japan_map)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = center
+            annotation.title = "ここです！"
+            japan_map.addAnnotation(annotation)
+            print("ああーーーーーーーーーー")
+            
+                }
         
     }
     
@@ -73,11 +105,19 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     //画面のキーボードで入力して改行で終わらないと値が入らない
     // 改行が入力された（デリゲートメソッド）
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let defaults = UserDefaults.standard
-        defaults.set(textField.text!,forKey:"title")
+        
+        print("タグ:"+String(textField.tag))
+        
+        //let defaults = UserDefaults.standard
+        if(textField.tag == 0){
+            defaults.set(textField.text!,forKey:"title")
+        }else{
+            defaults.set(textField.text!,forKey: "schedule")
+        }
         input_title=true
         // キーボードを下げる
         view.endEditing(true)
+        
         return false // 改行は入力しない
     }
     
@@ -116,7 +156,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     @IBAction func confirm(_ sender: Any) {
        
-        if titletextfield.text!.isEmpty {
+        if titletextfield.text!.isEmpty || !defaults.bool(forKey: "isDecidePlace") || schedule.text!.isEmpty {
             con.setTitle("すべて入力してください", for: .normal)
         }else{
             con.setTitle("確認", for: .normal)
@@ -124,8 +164,8 @@ class recruit2 : UIViewController, UITextFieldDelegate{
             let defaults = UserDefaults.standard
 
             
-            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "confirmpage")
-            present(nextVC!, animated: true,completion: nil)
+//            let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "confirmpage")
+//            present(nextVC!, animated: true,completion: nil)
             
             //入力事項をセット
             print("テーマ\(titletextfield.text!)")
