@@ -11,12 +11,21 @@ class account: UIViewController,MKMapViewDelegate {
     var messages: [DataSnapshot] = []
     var PinsData : [Dictionary<String, AnyObject>] = []
     var button_array:[UIButton] = []
+    var i = 0
+    //var count:Int = 0
 
     var annotationlist = Array<MKPointAnnotation>()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         japan_map.delegate = self
+        pins()
+        
+        print(annotationlist.count)
+//        while(i<2){
+//            print(annotationlist[i].coordinate.latitude)
+//            i=i+1
+//        }
         
     }
     @IBOutlet weak var japan_map: MKMapView!
@@ -50,7 +59,7 @@ class account: UIViewController,MKMapViewDelegate {
           // ...
         }
         
-        pins()
+        //pins()
         print("どうかな")
     }
     
@@ -63,27 +72,34 @@ class account: UIViewController,MKMapViewDelegate {
         // [END remove_auth_listener]
     }
     
-//    func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?{
-//
-//        let pinView = MKPinAnnotationView()
-//        pinView.canShowCallout = true
-//
-//
-//        pinView.animatesDrop = true
-//        pinView.isDraggable = true
-//        pinView.pinTintColor = UIColor.blue
-//        //button_array.append(UIButton(type: .detailDisclosure))
-//        let button = UIButton(type: .detailDisclosure)
-//        button.setTitle(String(button_array.count), for: .normal)
-//        button.addTarget(self, action: #selector(buttonEvent(_:)),for:UIControl.Event.touchUpInside)
-//        //self.navigationItem.rightBarButtonItem = button
-//        pinView.rightCalloutAccessoryView = button
-//        button_array.append(button)
-//        //pinView.canShowCallout = true
-//        print("ボタン何個？\(button_array.count)")
-//        print("ピンの数\(annotationlist.count)")
-//        return pinView
-//    }
+    func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?{
+
+
+        
+
+        let pinView = MKPinAnnotationView()
+
+        pinView.canShowCallout = true
+
+
+        pinView.animatesDrop = true
+        pinView.isDraggable = true
+        pinView.pinTintColor = UIColor.blue
+        //button_array.append(UIButton(type: .detailDisclosure))
+        let button = UIButton(type: .detailDisclosure)
+        button.setTitle(annotationlist[i].title, for: .normal)
+        i=i+1
+        button.addTarget(self, action: #selector(buttonEvent(_:)),for:UIControl.Event.touchUpInside)
+        //self.navigationItem.rightBarButtonItem = button
+        pinView.rightCalloutAccessoryView = button
+        button_array.append(button)
+        //pinView.canShowCallout = true
+        print("ボタン何個？\(button_array.count)")
+
+        //print("ピンの数\(annotationlist.count)")
+        return pinView
+
+    }
 
     //    ピンの中のiマークを押したときの処理
     @objc func buttonEvent(_ sender: UIButton) {
@@ -98,18 +114,34 @@ class account: UIViewController,MKMapViewDelegate {
         var i=0;
         while(i<button_array.count){
         if(sender == button_array[i]){
-            print("neko")
+//            print("neko")
             print(button_array[i].currentTitle)
-            print(annotationlist[i].title)
+//            print(annotationlist[i].title)
             //print(button_array[i].currentTitle ?? "ないねー")
+
+            let defaults = UserDefaults.standard
+            defaults.set(annotationlist[i].coordinate.latitude, forKey: "last_latitude")
+            defaults.set(annotationlist[i].coordinate.longitude, forKey: "last_longtitude")
         }
+
+//            wait(0.5)
+
+
             i=i+1;
         }
+        
+
+//        while(i<annotationlist.count){
+//
+//            print(annotationlist[i].coordinate.latitude)
+//            i=i+1;
+//
+//        }
+        
             
             
             
-            let defaults = UserDefaults.standard
-            defaults.set(annotationlist[annotationlist.count-1].coordinate.latitude, forKey: "last_latitude")
+            
             
             let second = storyboard?.instantiateViewController(withIdentifier: "account_2") as! account_2
             
@@ -139,32 +171,47 @@ class account: UIViewController,MKMapViewDelegate {
             var count = 0
             while count < strongSelf.messages.count{
                 if strongSelf.messages.count > count {
-                    print("\(count)ばんめ -> \(strongSelf.messages[count])")
+//                    print("\(count)ばんめ -> \(strongSelf.messages[count])")
                     let PinData = strongSelf.messages[count].value as? [String : AnyObject] ?? [:]
-                    print("pinデータ\(PinData)")
-                    print("pinデータタイプ\(type(of:PinData))")
+//                    print("pinデータ\(PinData)")
+//                    print("pinデータタイプ\(type(of:PinData))")
                     //配列にコメント 緯度経度追加
                     strongSelf.PinsData.append(PinData)
+//                    let presspoint:CGPoint
+//                    presspoint.x = CGFloat(PinData["latitude"] as! CLLocationDegrees)
+//                    presspoint.y = CGFloat(PinData["longitude"] as! CLLocationDegrees)
                     
+
 
                     
                     //そのままデータ追加
                     let annotation = MKPointAnnotation()
                     annotation.title = PinData["Plantheme"] as? String
-                    
+
                     annotation.coordinate.latitude = PinData["latitude"] as! CLLocationDegrees
                     annotation.coordinate.longitude = PinData["longitude"] as! CLLocationDegrees
-                    
 
-                    
+                    let zero:CLLocationDegrees = 0
+
+                    if(annotation.coordinate.latitude != zero || annotation.coordinate.longitude != zero){
                     strongSelf.annotationlist.append(annotation)
                     strongSelf.japan_map.addAnnotation(annotation)
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 }
                 count += 1
             }
-            print("ピン何個？\(strongSelf.PinsData.count)")
+            print("ピン何個？\(self!.annotationlist.count)")
             //print("ボタン何個？\(self?.button_array.count)")
 
+            //kThread.sleep(forTimeInterval: 0.5)
             
         })
     }
