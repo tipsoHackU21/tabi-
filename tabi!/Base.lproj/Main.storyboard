@@ -65,7 +65,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ppY-W6-lwQ">
             <objects>
-                <tabBarController id="bS5-NQ-32s" sceneMemberID="viewController">
+                <tabBarController id="bS5-NQ-32s" customClass="TabBarController" customModule="tabi_" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KZf-v3-Jae"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bv8-Pa-EMk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
