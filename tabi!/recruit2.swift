@@ -37,6 +37,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     @IBOutlet weak var con: UIButton!
     
     
+    @IBOutlet weak var Nights: UITextField!
     
 
     
@@ -146,7 +147,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         
         let place_data = ["Specific" : defaults.string(forKey: "都道府県")!, "latitude" : _lat, "longitude" : _long] as [String : Any]
         
-        let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし", "Places" : place_data] as [String : Any]
+        let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし", "Places" : place_data, "Nights" : Nights.text!] as [String : Any]
         let childUpdates_plan = ["/Plans/\(_PlanID)/" : plan_data]
         ref.updateChildValues(childUpdates_plan)
     }
