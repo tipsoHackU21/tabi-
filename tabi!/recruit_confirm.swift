@@ -27,7 +27,7 @@ class recruit_confirm : UIViewController{
 //        print(defaults.string(forKey: "destination")!)
 //        print(defaults.string(forKey: "title")!)
         title_label.text=defaults.string(forKey: "title") ?? "Nothing"
-        destination_label.text = defaults.string(forKey:"destination")!
+        destination_label.text = defaults.string(forKey:"都道府県")!
 //        schedule_label.text = String(defaults.integer(forKey: "schedule"))
         
     }
