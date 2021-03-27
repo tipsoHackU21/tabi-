@@ -50,6 +50,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print("あああ\(dic0)")
         
         //section0に追加
+        if dic0.count > 0 {
         var count = dic0[0].count
         var i = 0
         for (key, value) in dic0[0] {
@@ -57,6 +58,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
             section0.append((key, value))
             let defaults = UserDefaults.standard
             defaults.setValue("\(value)", forKey: "")
+        }
         }
         
         tableData4 = [section0,section1]

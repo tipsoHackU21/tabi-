@@ -142,21 +142,28 @@ class account_3: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UI
         //keyを生成
         guard let key = self.ref.child("suggestPlans").childByAutoId().key else { return }
         //Comment,Places,Schedule,isSelected,makerを追加
-        let places = ["Prefecture" : "都道府県",
-                      "Specific" : "場所名",
-                      "latitude" : "緯度",
-                      "longitude" : "経度"]
+        let places = ["Prefecture" : _Pref,
+                      "Specific" : _Speci,
+                      "latitude" : _lat,
+                      "longitude" : _long] as [String : Any]
         let schedules = ["start_time": _start_time,
-                         "end_time": "終了時間",
-                         "action": "行動",
+                         "end_time": _end_time,
+                         "action": _action,
                          "place": _Places,
-                         "day": "何日目"]
+                         "day": _day]
         self.ref.child("/suggestPlans/\(key)").setValue(["Comment" : _Comment,
                                                          "Places" : places,
                                                          "Schedule" : schedules,
                                                          "isSelected" : 0,
                                                          "maker" : userID])
+        
+        //give plan
+        
+        let defaults = UserDefaults.standard
+        let set_gift = [ "\(defaults.string(forKey :"Planuser")!)" : ["\(defaults.string(forKey :"suggestPlanID")!)" : [ _Comment :"\(key)" ]]]
+        self.ref.child("/giftPlans").updateChildValues(set_gift)
     }
+    
     
     
     /*　UITableViewDataSourceプロトコル */
