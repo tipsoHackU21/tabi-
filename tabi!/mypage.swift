@@ -21,7 +21,7 @@ class mypage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = .blue
+        self.navigationController?.navigationBar.barTintColor = AppColors.primary
         //ユーザー名の表示
         UserName.text = Auth.auth().currentUser?.displayName
         count = 0
