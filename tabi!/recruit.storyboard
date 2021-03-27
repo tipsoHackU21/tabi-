@@ -257,6 +257,7 @@
                     <navigationItem key="navigationItem" title="募集プラン！" id="7GQ-RI-aiT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="Nights" destination="YUU-fP-GSR" id="M4H-K1-Ipr"/>
                         <outlet property="about" destination="5lC-LX-upd" id="Agt-4N-DoM"/>
                         <outlet property="con" destination="fkU-QH-3Eq" id="MzJ-DU-kya"/>
                         <outlet property="night" destination="YUU-fP-GSR" id="540-d8-tc7"/>
@@ -498,23 +499,31 @@
                                     <action selector="Decide:" destination="yoe-m1-sfy" eventType="touchUpInside" id="tSA-1j-M7M"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDL-0V-WaZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="場所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDL-0V-WaZ">
                                 <rect key="frame" x="40" y="624" width="310" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6at-3h-LFJ">
+                                <rect key="frame" x="40" y="128" width="310" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wvN-iv-LRd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PDL-0V-WaZ" firstAttribute="leading" secondItem="wvN-iv-LRd" secondAttribute="leading" constant="40" id="37H-py-3nE"/>
                             <constraint firstItem="3av-Hz-jFO" firstAttribute="leading" secondItem="wvN-iv-LRd" secondAttribute="leading" constant="40" id="LBX-4w-Ykv"/>
+                            <constraint firstItem="6at-3h-LFJ" firstAttribute="leading" secondItem="fc3-f8-xtG" secondAttribute="leading" id="MQj-yv-yEk"/>
                             <constraint firstItem="3av-Hz-jFO" firstAttribute="top" secondItem="fc3-f8-xtG" secondAttribute="bottom" constant="40" id="Ucu-V3-Tte"/>
                             <constraint firstItem="wvN-iv-LRd" firstAttribute="trailing" secondItem="PDL-0V-WaZ" secondAttribute="trailing" constant="40" id="WRi-uS-bgB"/>
                             <constraint firstItem="wvN-iv-LRd" firstAttribute="trailing" secondItem="7D5-8I-H77" secondAttribute="trailing" constant="20" id="Xh2-JM-yUt"/>
+                            <constraint firstItem="6at-3h-LFJ" firstAttribute="top" secondItem="wvN-iv-LRd" secondAttribute="top" constant="40" id="Z34-QZ-xIW"/>
                             <constraint firstItem="fc3-f8-xtG" firstAttribute="top" secondItem="wvN-iv-LRd" secondAttribute="top" constant="70" id="cAK-F5-9Dg"/>
                             <constraint firstItem="PDL-0V-WaZ" firstAttribute="top" secondItem="fc3-f8-xtG" secondAttribute="bottom" constant="100" id="cEG-aV-xcq"/>
+                            <constraint firstItem="6at-3h-LFJ" firstAttribute="trailing" secondItem="fc3-f8-xtG" secondAttribute="trailing" id="cQ0-KD-DRk"/>
                             <constraint firstItem="wvN-iv-LRd" firstAttribute="trailing" secondItem="fc3-f8-xtG" secondAttribute="trailing" constant="40" id="g3N-FJ-CKC"/>
                             <constraint firstItem="wvN-iv-LRd" firstAttribute="bottom" secondItem="7D5-8I-H77" secondAttribute="bottom" constant="120" id="igY-Uu-3Hf"/>
                             <constraint firstItem="fc3-f8-xtG" firstAttribute="leading" secondItem="wvN-iv-LRd" secondAttribute="leading" constant="40" id="naa-PS-nKO"/>
