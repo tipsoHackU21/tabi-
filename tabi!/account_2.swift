@@ -66,8 +66,13 @@ class account_2: UIViewController {
             self!.profile["\(snapshot.key)"] = "\(snapshot.value!)"
             self!.PlanTitle.text = self!.profile["Plantheme"]
             self!.Recruiter.text = self!.profile["PlanUser"]
-            self!.Where.text = self!.profile["Plantheme"]
-            self!.HowLong.text = self!.profile["Schedule"]
+//            self!.Where.text = self!.profile["Plantheme"]
+            self!.Where.text = "北海道"
+//            self!.HowLong.text = self!.profile["Schedule"]
+            self!.HowLong.text = "1泊2日"
+            let defaults = UserDefaults.standard
+
+            defaults.setValue(self!.profile["PlanUser"], forKey: "Planuser")
                 
         })
         
