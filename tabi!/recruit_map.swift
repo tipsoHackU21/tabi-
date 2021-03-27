@@ -70,7 +70,8 @@ class recruit_map: UIViewController,MKMapViewDelegate {
             if placemark.administrativeArea! != nil{
                 let defaults = UserDefaults.standard
                 defaults.setValue(placemark.administrativeArea!, forKey: "都道府県")
-                self.address_field.text = placemark.administrativeArea!
+                defaults.setValue(placemark.name!, forKey: "場所名")
+                self.address_field.text = placemark.name!
 //                self.pre = placemark.administrativeArea!
             }
             

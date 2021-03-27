@@ -56,7 +56,7 @@ class recruit2 : UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.`where`.text = "お腹"
+        self.`where`.text = "選んでね"
         if defaults.bool(forKey: "isDecidePlace") {
             print("latitude : \(defaults.float(forKey: "lat"))")
             print("longitude : \(defaults.float(forKey: "long"))")
@@ -144,8 +144,9 @@ class recruit2 : UIViewController, UITextFieldDelegate{
         let childUpdates_user_plan = ["/Users/\(userID)/MyPlans/\(_PlanID)" : plan_user_data]
         ref.updateChildValues(childUpdates_user_plan)
         
+        let place_data = ["Specific" : defaults.string(forKey: "都道府県")!, "latitude" : _lat, "longitude" : _long] as [String : Any]
         
-        let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし"] as [String : Any]
+        let plan_data = ["Plantheme" : _Plantheme, "PlanUser" : userID, "Plannners" : [userID], "When" : "なし", "Schedule" : "なし", "Comment" : "なし", "Places" : place_data] as [String : Any]
         let childUpdates_plan = ["/Plans/\(_PlanID)/" : plan_data]
         ref.updateChildValues(childUpdates_plan)
     }
