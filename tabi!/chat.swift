@@ -1,7 +1,7 @@
 import UIKit
 import FirebaseDatabase
 
-class chat: UIViewController {
+class chat: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var nameInputView: UITextField!
@@ -9,9 +9,12 @@ class chat: UIViewController {
     @IBOutlet weak var inputViewBottomMargin: NSLayoutConstraint!
 
     var databaseRef: DatabaseReference!
+    
+    let list = ["Aさん", "Bさん", "Cさん"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         /*databaseRef = Database.database().reference()
 
@@ -27,6 +30,11 @@ class chat: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(chat.keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)*/
 
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
 
     /*@IBAction func tappedSendButton(_ sender: Any) {
         view.endEditing(true)
@@ -49,5 +57,15 @@ class chat: UIViewController {
     @objc func keyboardWillHide(_ notification: NSNotification){
         inputViewBottomMargin.constant = 0
     }*/
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let Cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        Cell.textLabel!.text = list[indexPath.row]
+        return Cell
+    }
 
 }
