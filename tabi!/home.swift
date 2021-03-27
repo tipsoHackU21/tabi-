@@ -50,15 +50,15 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         print("あああ\(dic0)")
         
         //section0に追加
-        if dic0.count > 0 {
-        var count = dic0[0].count
-        var i = 0
+//        if dic0.count > 0 {
+//        var count = dic0[0].count
+//        var i = 0
         for (key, value) in dic0[0] {
             print("\(key) -> \(value)")
             section0.append((key, value))
             let defaults = UserDefaults.standard
             defaults.setValue("\(value)", forKey: "")
-        }
+//        }
         }
         
         tableData4 = [section0,section1]
@@ -105,7 +105,7 @@ class home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         guard let userID = Auth.auth().currentUser?.uid else { return }
     // Listen for new messages in the Firebase database
         dic0 = []
-        _refHandle = self.ref.child("giftPlans/UserID").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+        _refHandle = self.ref.child("giftPlans/\(userID)").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
                 guard let strongSelf = self else { return }
             // プランをsection0に追加する
             self!.section0 = []

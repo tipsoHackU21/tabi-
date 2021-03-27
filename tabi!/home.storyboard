@@ -16,18 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My募集一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6P-7w-LBY">
-                                <rect key="frame" x="20" y="123" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My募集一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6P-7w-LBY">
+                                <rect key="frame" x="20" y="128" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VVU-2F-kjM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgp-12-7Bc">
-                                <rect key="frame" x="328" y="125" width="61" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgp-12-7Bc">
+                                <rect key="frame" x="354" y="128" width="40" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="jCY-Kn-bKb"/>
+                                    <constraint firstAttribute="height" constant="40" id="xl1-Se-EJS"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="0.96470588239999999" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="表示">
                                     <color key="titleColor" red="0.054901960780000002" green="0.66274509800000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -39,6 +44,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0SH-mD-rjr"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E6P-7w-LBY" firstAttribute="leading" secondItem="0SH-mD-rjr" secondAttribute="leading" constant="20" id="ABo-Ni-5rr"/>
+                            <constraint firstItem="E6P-7w-LBY" firstAttribute="top" secondItem="0SH-mD-rjr" secondAttribute="top" constant="40" id="Wdp-Ri-Pr2"/>
+                            <constraint firstItem="dgp-12-7Bc" firstAttribute="trailing" secondItem="E6P-7w-LBY" secondAttribute="trailing" id="krt-wl-eLZ"/>
+                            <constraint firstItem="dgp-12-7Bc" firstAttribute="top" secondItem="E6P-7w-LBY" secondAttribute="top" id="ruw-ky-HmN"/>
+                            <constraint firstItem="0SH-mD-rjr" firstAttribute="trailing" secondItem="E6P-7w-LBY" secondAttribute="trailing" constant="20" id="xc8-TV-PjQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="home" image="house.fill" catalog="system" selectedImage="house.fill" id="UOv-2b-oJt"/>
                     <navigationItem key="navigationItem" title="募集リスト" id="E3v-IV-uIS"/>
